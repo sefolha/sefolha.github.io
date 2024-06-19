@@ -1,0 +1,269 @@
+@keyframes fadein{
+  0%{
+    filter: blur(4px);
+  }
+
+   50%{
+   filter: blur(0px);
+  }
+
+  100%{
+   filter: blur(4px);
+  }
+
+}
+
+
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+body{
+  background-color: black;
+  color: white;
+  text-decoration: none;
+
+}
+
+
+header{
+  font-family: jura;
+  top: 20px;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10000;
+  font-family: jura;
+}
+
+#logo{
+  height: 40px;
+  width: 200px;
+  margin-left: 20px;
+  font-size: 30px;
+}
+
+header ul{
+  width: 40vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 20px;
+}
+
+header ul li{
+  text-transform: uppercase;
+  font-size: 1.1em;
+
+}
+
+figcaption{
+  font-size: 100px;
+}
+footer{
+  position: fixed;
+  bottom: 20px;
+  width: 100vw;
+  z-index: 1001;
+  font-family: sans-serif;
+}
+footer ul{
+  width: calc(100% - 40px);
+  margin: auto;
+  display: flex;
+  justify-content: space-between; 
+  font-family: sans-serif; 
+}
+footer ul li{
+  width: 50%;
+  font-family: sans-serif;
+}
+
+.titre{ 
+font-size: 100px;
+ }
+/* 
+page intro projet et divers
+ */
+
+
+#conteneurintroproj{
+  width: 70vw;
+  margin: 400px auto 100px;
+}
+
+.ligne{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 150px;
+}
+
+.ligne article{
+  width: 150px;
+}
+
+.ligne article figure{
+  width: 100%;
+  height: 150px;
+  margin-bottom: 5px;
+  border: 1px solid black;
+
+}
+
+
+.zoomable {
+    transition: transform 0.3s ease;
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+
+.zoomable:hover {
+    transform: scale(1.1);
+    filter: brightness(1)  hue-rotate(200deg);
+    
+
+
+}
+
+
+
+
+.ligne article h5{
+  margin-bottom: 5px;
+}
+
+
+figure img{
+  width: 100%;
+}
+
+/*
+page projet
+*/
+
+
+
+#conteneurproj{
+  border: 1px;
+  width: 100vw;
+  padding-top: 100px;
+}
+
+#introprojet{
+  width: 50vw;
+  height: 300px;
+  border: 1px;
+}
+
+      #introprojet h2{
+        font-size: 3em;
+        text-transform: uppercase;
+        margin-top: 2em;
+        margin-left: 20px;
+        font-family: jura;
+      }
+
+      #introprojet h3{
+        font-size: 2em;
+        margin-left: 20px;
+        margin-top: 10px;
+      }
+
+      #introprojet h4{
+        font-size: 1em;
+        text-transform: uppercase;
+        margin-top: 2em;
+        margin-left: 20px;
+        font-family: sans-serif;
+      }
+
+
+.imageentiere{
+  width: 100vw;
+}
+
+.video #animDMDM {
+  width: 100%;
+}
+
+
+
+
+.contenuprojet{
+  width: 70vw;
+  margin: auto;
+
+}
+
+.ligneprojet{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 150px;
+}
+
+
+
+.deuxligneprojet{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 150px;
+}
+
+
+.ligneprojet .deuxcolonnes{
+  width: 500px;
+  border: 1px solid black;
+  margin: 100px;
+  overflow: hidden;
+  line-height: 1.2em;
+  font-family: sans-serif;
+  
+}
+
+
+
+
+
+.ligneprojet figure{
+  width: 500px;
+  height: 600px;
+}
+
+
+
+.troisligneprojet figure{
+  width: 500px;
+  height: 400px;
+  margin-top: 50px;
+}
+
+
+#conteneurproj nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 150px;
+  width: 70vw;
+  margin: auto;
+  font-family: sans-serif;
+}
+
+
+#vimeo{
+  padding:177.78% 0 0 0;
+  position:relative;
+
+}
+
+
+
+
