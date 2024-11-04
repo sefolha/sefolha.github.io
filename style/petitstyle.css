@@ -1,0 +1,125 @@
+* {
+    box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur totale */
+}
+
+header {
+    margin-top: 20px; /* Ajustez cette valeur pour ajouter de l'espace au-dessus de l'en-tête */
+}
+
+header ul {
+    max-width: 100vw; /* Limite la largeur de la liste à la largeur de l'écran */
+    display: flex;
+    flex-wrap: wrap; /* Permet aux éléments de se déplacer sur une nouvelle ligne si nécessaire */
+    justify-content: flex-start; /* ou space-between, selon votre préférence */
+    align-items: center;
+    padding-right: 20px;
+    overflow: hidden; /* Cache le débordement si nécessaire */
+}
+
+header ul li {
+    text-transform: uppercase;
+    font-size: 1.1em;
+    margin: 0 15px; /* Ajustez pour espacer les mots */
+    line-height: 1.0;
+}
+
+#logo img {
+    height: auto; /* Pour garder l'aspect ratio correct */
+    max-height: 160%; /* Utilisez max-height au lieu de height pour éviter les déformations */
+    margin-top: -20px;
+}
+
+#content-large {
+    display: none; /* Masque le contenu pour grands écrans */
+}
+
+/* Afficher le contenu pour petits écrans */
+#content-small {
+    display: block; /* Affiche le contenu pour petits écrans */
+}
+
+#content-small .article {
+    margin-bottom: 1px;
+}
+
+
+
+
+
+
+#content-small{
+  width: 80vw;
+  margin: 20px auto 10px;
+}
+
+
+
+.petiteligne article figure{
+  width: 100%;
+  height: 80vw;
+  margin-bottom: 5px;
+  margin-bottom: 5px;
+
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+
+
+.petite article figure img{
+  width: 100%;
+  transition: transform 0.3s ease;
+  border-radius: ;
+}
+.petite article figure img:hover {
+    transform: scale(1.1); /* Zoom à 110% */
+
+}
+.zoomable {
+    opacity: 0;
+    transform: translateY(50px); /* Décalage vers le bas pour l'effet de montée */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Transition plus lente pour une apparition douce */
+}
+
+.zoomable:hover {
+    transform: scale(1.05); /* Un zoom léger au survol pour garder l'effet subtil */
+}
+
+.zoomable.visible {
+    opacity: 1;
+    transform: translateY(0); /* Reprend sa position initiale */
+}
+
+
+
+.petiteligne article h5{
+  font-size: 20px;
+  margin-top: 10px;
+  margin-top: px;
+  font-family: sans-serif;
+  margin-left: 20px;
+}
+
+.petiteligne article h6{
+  margin-bottom: 60px;
+  margin-top: 5px;
+  font-family: sans-serif;
+  margin-left: 20px;
+}
+
+
+
+#petitconteneurproj {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Afficher le contenu grand écran par défaut */
+#grandconteneurproj {
+    display: none;
+}
+
+
+
+

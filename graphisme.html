@@ -1,232 +1,394 @@
-
+<!DOCTYPE html>
 <html lang="fr">
 
-	<head>
-  		<meta charset="utf-8">
-  		<title>Titre de la page</title>
-  		<link rel="stylesheet" href="style/reset.css">
-		<link rel="stylesheet" href="style/style.css">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Added for responsive design -->
+    <title>Graphisme :)</title>
+    <link rel="stylesheet" href="style/reset.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&display=swap" rel="stylesheet"> <!-- Corrected font weights -->
+    <link rel="stylesheet" media="screen and (max-width:768px)" href="style/petitstyle.css">
+</head>
 
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet">
-	</head>
+<body>
 
-	<body>
+    <header>
+        <a href="index.html">
+            <div id="logo">
+                <img src="images/logo.png" alt="Logo"> 
+            </div>
+        </a>
 
-		<header>
-			<a href="index.html">
-				<div id="logo">
-					SefOlHa
-				</div>
-			</a>
+        <nav>
+            <ul>
+                <li><a href="graphisme.html">Graphisme</a></li>
+                <li><a href="diversMosaique.html">Divers</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
 
-			<ul>
-				<a href="graphisme.html">
-					<li>Graphisme</li>
-				</a>
-				<a href="divers.html">
-					<li>divers</li>
-				</a>
-				<a href="about.html">
-					<li>About</li>
-				</a>
-			</ul>
-		</header>
+    <div id="content-large">
 
-		<div id="conteneurintroproj">
+        <!-- Première ligne -->
+        <div class="ligne">
+            <article class="zoomable">
+                <a href="Logoprojet.html">
+                    <figure>
+                        <img src="images/logoVignette.jpg" alt="Mon logo, les origines"> <!-- Added alt attribute -->
+                    </figure>
+                    <h5>Mon logo, les origines</h5>
+                    <h6>2024 - Identité visuelle</h6>
+                </a>
+            </article>
+            <article class="zoomable">
+                <a href="Mutekprojet.html">
+                    <figure>
+                        <img src="images/mutekVignette.jpg" alt="Mutek"> <!-- Added alt attribute -->
+                    </figure>
+                    <h5>Mutek</h5>
+                    <h6>2024 - Affiche animée</h6>
+                </a>
+            </article>
+            <article>
+                <!-- Article vide pour l'espace vide -->
+            </article>
+        </div>
 
-<!-- première ligne -->
+        <!-- Deuxième ligne -->
+        <div class="ligne">
+            <article>
+                <!-- Article vide pour l'espace vide -->
+            </article>
+            <article class="zoomable">
+                <a href="DMDMprojettype.html">
+                    <figure>
+                        <img src="images/DMDMvignette.jpg" alt="Dis-Moi dix mots"> <!-- Added alt attribute -->
+                    </figure>
+                    <h5>Dis-Moi dix mots</h5>
+                    <h6>2024 - Affiche animée</h6>
+                </a>
+            </article>
+            <article class="zoomable">
+                <a href="MinisiteProjet.html">
+                    <figure>
+                        <img src="images/animauxVignette.jpg" alt="La Ferme des Animaux"> <!-- Added alt attribute -->
+                    </figure>
+                    <h5>La Ferme des Animaux</h5>
+                    <h6>2024 - Édition</h6>
+                </a>
+            </article>
+        </div>
 
-			<div class="ligne">
-				<article class="zoomable">
-					<a href="DMDMprojettype.html">
-						<figure>
-							<img src="images/DMDMvignette.jpg"class="zoomable">
-						</figure>
-						<h5>
-							Dis-Moi dix mots
-						</h5>
-						<h6>
-							2024 - Affiche animée
-						</h6>
-					</a>	
-				</article>
+        <!-- Troisième ligne -->
+        <div class="ligne">
+            <article class="zoomable">
+                <a href="plageGalactique.html">
+                    <figure>
+                        <img src="images/plageGalactiqueVignette.jpg" alt="Plage Galactique"> <!-- Added alt attribute -->
+                    </figure>
+                    <h5>Plage Galactique</h5>
+                    <h6>2023 - BD</h6>
+                </a>
+            </article>
+            <article class="zoomable">
+                <a href="teaserprojet.html">
+                    <figure>
+                        <img src="images/teaserVignette.jpg" alt="Teaser Journée portes ouvertes"> <!-- Added alt attribute -->
+                    </figure>
+                    <h5>Teaser Journée portes ouvertes</h5>
+                    <h6>2024 - Animation</h6>
+                </a>
+            </article>
+            <article>
+                <!-- Article vide pour l'espace vide -->
+            </article>
+        </div>
 
-				<article class="zoomable">
-					<a href="MinisiteProjet.html">
-						<figure>
-							<img src="images/minisiteVignette.jpg"class="zoomable">
-						</figure>
-						<h5>
-							Chasse aux hackers
-						</h5>
-						<h6>
-							2024 - site web
-						</h6>
-					</a>	
-				</article>
-				<article>
-					<!-- article vide pour l'espace vide -->
-				</article>
+        <!-- Quatrième ligne -->
+        <div class="ligne">
+            <article>
+                <!-- Article vide pour l'espace vide -->
+            </article>
+            <article class="zoomable">
+                <a href="catalogue.html">
+                    <figure>
+                        <img src="images/catalogueVignette.jpg" alt="Catalogue d'artiste"> <!-- Added alt attribute -->
+                    </figure>
+                    <h5>Catalogue d'artiste</h5>
+                    <h6>2024 - Édition</h6>
+                </a>
+            </article>
+            <article class="zoomable">
+                <a href="portaitprojet.html">
+                    <figure>
+                        <img src="images/vogueVignette.jpg" alt="Portrait de presse"> <!-- Added alt attribute -->
+                    </figure>
+                    <h5>Portrait de presse</h5>
+                    <h6>2024 - Photographie</h6>
+                </a>
+            </article>
+        </div>
 
-				<article>
-					<!-- article vide pour l'espace vide -->
-				</article>
+        <!-- Cinquième ligne -->
+        <div class="ligne">
+            <article>
+                <!-- Article vide pour l'espace vide -->
+            </article>
+            <article>
+                <!-- Article vide pour l'espace vide -->
+            </article>
+            <article>
+                <!-- Article vide pour l'espace vide -->
+            </article>
+            <article class="zoomable">
+                <a href="projettype.html">
+                    <figure>
+                        <img src="images/SBKvignette.jpg" alt="Graphisme dansant"> <!-- Added alt attribute -->
+                    </figure>
+                    <h5>Graphisme dansant</h5>
+                    <h6>2024 - Identité visuelle</h6>
+                </a>
+            </article>
+        </div>
 
+        <div class="ligne">
+            <article>
+                <!-- Article vide pour l'espace vide -->
+            </article>
+            <article>
+                <!-- Article vide pour l'espace vide -->
+            </article>
+            <article>
+                <!-- Article vide pour l'espace vide -->
+            </article>
+        </div>
 
-			</div>
-
-<!-- deuxieme ligne -->			
-
-			<div class="ligne">
-
-				<article>
-					<!-- article vide pour l'espace vide -->
-				</article>
-
-				<article>
-					<!-- article vide pour l'espace vide -->
-				</article>
-				
-				<article>
-					<a href="plageGalactique.html"class="zoomable">
-						<figure>
-							<img src="images/plageGalactiqueVignette.jpg" class="zoomable">
-						</figure>
-						<h5>
-							Plage Galactique
-						</h5>
-						<h6>
-							2023 - BD
-						</h6>
-					</a>	
-				</article>	
-
-				<article>
-					<a href="teaserprojet.html" class="zoomable">
-						<figure>
-							<img src="images/teaserVignette.jpg" class="zoomable">
-						</figure>
-						<h5>
-							Teaser Journée portes ouvertes
-						</h5>
-						<h6>
-							2024 - Animation
-						</h6>
-					</a>	
-				</article>
-				
-			</div>
-
-<!-- troisieme ligne -->
-
-			<div class="ligne">
-				<article>
-					<a href="portaitprojet.html" class="zoomable">
-						<figure>
-							<img src="images/vogueVignette.jpg" class="zoomable">
-						</figure>
-						<h5>
-							Portrait de presse
-						</h5>
-						<h6>
-							2024 - Photographie
-						</h6>
-					</a>	
-				</article>
-				<article>
-					<!-- article vide pour l'espace vide -->
-				</article>
-				<article>
-					<!-- article vide pour l'espace vide -->
-				</article>
-				<article>
-					<!-- article vide pour l'espace vide -->
-				</article>
-					
-			</div>
-
-<!-- quatrieme ligne -->
-
-			<div class="ligne">
-				<article>
-					<!-- article vide pour l'espace vide -->
-				</article>
-				<article>
-					<a href="Mutekprojet.html" class="zoomable">
-						<figure>
-							<img src="images/mutekVignette.jpg" class="zoomable">
-						</figure>
-						<h5>
-							Mutek
-						</h5>
-						<h6>
-							2024 - Affiche animée
-						</h6>
-					</a>	
-				</article>
-				<article>
-					<a href="catalogue.html" class="zoomable">
-						<figure>
-							<img src="images/catalogueVignette.jpg"class="zoomable">
-						</figure>
-						<h5>
-							Catalogue d'artiste
-						</h5>
-						<h6>
-							2024 - Édition
-						</h6>
-					</a>	
-				</article>
-				<article>
-					<!-- article vide pour l'espace vide -->
-				</article>
-				
-			</div>
-
-<!-- cinquième ligne -->
-
-			<div class="ligne">
-				<article>
-					<!-- article vide pour l'espace vide -->
-				</article>
-				<article>
-					<!-- article vide pour l'espace vide -->
-				</article>
-				<article>
-					<!-- article vide pour l'espace vide -->
-				</article>
-				
+    </div>
 
 
-<!-- à voir si je rajoute ça -->
 
-				<!-- <article>
-					<a href="projettype.html">
-						<figure>
-							<img src="images/SBKvignette.jpg">
-						</figure>
-						<h5>
-							titre du projet
-						</h5>
-						<h6>
-							2024 - Type
-						</h6>
-					</a>	
-				</article> -->
-			</div>			
 
-		</div>
 
-		
 
-		<footer>
-			<ul>
-				<li>serenadelgado[at]gmail.com</li>
-				<li>sefolha</li>
-			</ul>
-		</footer>
 
-	</body>	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="content-small">
+ 
+
+<div class="petiteligne">
+            <article class="zoomable">
+                <a href="Logoprojet.html">
+                    
+                    <h5></h5>
+                    <h6> <br><br><br><br></h6>
+                </a>
+            </article>
+        </div>
+        <div class="petiteligne">
+            <article class="zoomable">
+                <a href="Logoprojet.html">
+                    <figure>
+                        <img src="images/logoVignette.jpg" alt="Mon logo, les origines"> <!-- Added alt attribute -->
+                    </figure>
+                    <h5>Mon logo, les origines</h5>
+                    <h6>2024 - Identité visuelle</h6>
+                </a>
+            </article>
+        </div>
+         <div class="petiteligne">
+            <article class="zoomable">
+                <a href="Mutekprojet.html">
+                    <figure>
+                        <img src="images/mutekVignette.jpg" alt="Mutek"> <!-- Added alt attribute -->
+                    </figure>
+                    <h5>Mutek</h5>
+                    <h6>2024 - Affiche animée</h6>
+                </a>
+            </article>
+        </div>
+
+        
+        <div class="petiteligne">
+             <article class="zoomable">
+                <a href="DMDMprojettype.html">
+                    <figure>
+                        <img src="images/DMDMvignette.jpg" alt="Dis-Moi dix mots"> <!-- Added alt attribute -->
+                    </figure>
+                    <h5>Dis-Moi dix mots</h5>
+                    <h6>2024 - Affiche animée</h6>
+                </a>
+            </article>
+        </div>
+
+        <div class="petiteligne">
+            <article class="zoomable">
+                <a href="MinisiteProjet.html">
+                    <figure>
+                        <img src="images/animauxVignette.jpg" alt="La Ferme des Animaux"> <!-- Added alt attribute -->
+                    </figure>
+                    <h5>La Ferme des Animaux</h5>
+                    <h6>2024 - Édition</h6>
+                </a>
+            </article>
+        </div>
+
+      
+        <div class="petiteligne">
+            <article class="zoomable">
+                <a href="plageGalactique.html">
+                    <figure>
+                        <img src="images/plageGalactiqueVignette.jpg" alt="Plage Galactique"> <!-- Added alt attribute -->
+                    </figure>
+                    <h5>Plage Galactique</h5>
+                    <h6>2023 - BD</h6>
+                </a>
+            </article>
+        </div>
+        <div class="petiteligne">
+            <article class="zoomable">
+                <a href="teaserprojet.html">
+                    <figure>
+                        <img src="images/teaserVignette.jpg" alt="Teaser Journée portes ouvertes"> <!-- Added alt attribute -->
+                    </figure>
+                    <h5>Teaser Journée portes ouvertes</h5>
+                    <h6>2024 - Animation</h6>
+                </a>
+            </article>
+        </div>
+        <div class="petiteligne">
+   
+            <article class="zoomable">
+                <a href="catalogue.html">
+                    <figure>
+                        <img src="images/catalogueVignette.jpg" alt="Catalogue d'artiste"> <!-- Added alt attribute -->
+                    </figure>
+                    <h5>Catalogue d'artiste</h5>
+                    <h6>2024 - Édition</h6>
+                </a>
+            </article>
+        </div>
+
+        <div class="petiteligne">
+            <article class="zoomable">
+                <a href="portaitprojet.html">
+                    <figure>
+                        <img src="images/vogueVignette.jpg" alt="Portrait de presse"> <!-- Added alt attribute -->
+                    </figure>
+                    <h5>Portrait de presse</h5>
+                    <h6>2024 - Photographie</h6>
+                </a>
+            </article>
+        </div>
+
+        
+      <div class="petiteligne">
+            <article class="zoomable">
+                <a href="projettype.html">
+                    <figure>
+                        <img src="images/SBKvignette.jpg" alt="Graphisme dansant"> <!-- Added alt attribute -->
+                    </figure>
+                    <h5>Graphisme dansant</h5>
+                    <h6>2024 - Identité visuelle</h6>
+                </a>
+            </article>
+        </div>
+
+       
+
+
+
+
+       
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Arrête d'observer après l'apparition
+                }
+            });
+        }, {
+            threshold: 0.2 // Se déclenche lorsque 20 % de l'élément est visible
+        });
+
+        document.querySelectorAll('.zoomable').forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+
+</body>
 </html>

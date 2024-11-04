@@ -1,17 +1,4 @@
-@keyframes fadein{
-  0%{
-    filter: blur(4px);
-  }
 
-   50%{
-   filter: blur(0px);
-  }
-
-  100%{
-   filter: blur(4px);
-  }
-
-}
 
 
 a{
@@ -24,30 +11,66 @@ a:hover{
 }
 
 body{
-  background-color: black;
+  background-color:black;
   color: white;
   text-decoration: none;
 
 }
 
+#slideshow {
+  position: fixed; /* Fixe la vidéo en arrière-plan */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Place la vidéo en dessous de tout */
+  overflow: hidden;
+}
 
+/* Style de la vidéo */
+#slideshow video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Couvre tout l'écran sans déformer la vidéo */
+}
+
+/* Style du header pour le maintenir au-dessus */
+#indexheader {
+  position: relative; /* Peut aussi être fixed ou absolute si nécessaire */
+  z-index: 1; /* Assure que le header est au-dessus de la vidéo */
+  width: 100%;
+  background-color: transparent; /* Pas de fond */
+  color: white;
+  mix-blend-mode: difference;
+}
+#indexheader ul li{
+  text-transform: uppercase;
+  font-size: 1.1em;
+    color: inherit;
+
+}
 header{
-  font-family: jura;
+  
   top: 20px;
   width: 100vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 10000;
-  font-family: jura;
+  font-family: sans-serif;
 }
 
 #logo{
-  height: 40px;
-  width: 200px;
+  height: 60px;
+  margin-top: 20px;
   margin-left: 20px;
   font-size: 30px;
 }
+
+#logo img{
+  height: 100%;
+}
+
 
 header ul{
   width: 40vw;
@@ -93,51 +116,77 @@ page intro projet et divers
  */
 
 
-#conteneurintroproj{
-  width: 70vw;
-  margin: 400px auto 100px;
+#content-large{
+  width: 80vw;
+  margin: 200px auto 100px;
 }
 
 .ligne{
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
-  margin-bottom: 150px;
+  margin-bottom:10%;
+
+
+
 }
 
 .ligne article{
-  width: 150px;
+  width: calc(33.33% - 20px);
+  margin-bottom: 10px;
+  
 }
 
 .ligne article figure{
   width: 100%;
-  height: 150px;
+  height: 20vw;
   margin-bottom: 5px;
-  border: 1px solid black;
-
+ 
+  overflow: hidden;
+  border-radius: 10px;
 }
 
 
+
+.ligne article figure img{
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+.ligne article figure img:hover {
+    transform: scale(1.1); /* Zoom à 110% */
+
+}
 .zoomable {
-    transition: transform 0.3s ease;
-    transition: filter 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(50px); /* Décalage vers le bas pour l'effet de montée */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Transition plus lente pour une apparition douce */
 }
-
 
 .zoomable:hover {
-    transform: scale(1.1);
-    filter: brightness(1)  hue-rotate(200deg);
-    
-
-
+    transform: scale(1.05); /* Un zoom léger au survol pour garder l'effet subtil */
 }
 
+.zoomable.visible {
+    opacity: 1;
+    transform: translateY(0); /* Reprend sa position initiale */
+}
 
 
 
 .ligne article h5{
+  font-size: 20px;
   margin-bottom: 5px;
+  margin-top: px;
+  font-family: sans-serif;
 }
+
+.ligne article h6{
+  margin-bottom: 5px;
+  margin-top: 5px;
+  font-family: sans-serif;
+}
+
 
 
 figure img{
@@ -167,21 +216,24 @@ page projet
         text-transform: uppercase;
         margin-top: 2em;
         margin-left: 20px;
-        font-family: jura;
+        font-family: sans-serif;
       }
 
       #introprojet h3{
         font-size: 2em;
         margin-left: 20px;
         margin-top: 10px;
+        font-family: sans-serif;
       }
 
       #introprojet h4{
-        font-size: 1em;
+        font-size: 1.5em;
         text-transform: uppercase;
-        margin-top: 2em;
+        margin-top: 0.3em;
         margin-left: 20px;
         font-family: sans-serif;
+        color: grey;
+
       }
 
 
@@ -197,7 +249,7 @@ page projet
 
 
 .contenuprojet{
-  width: 70vw;
+  width: 75vw;
   margin: auto;
 
 }
@@ -206,7 +258,7 @@ page projet
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-top: 150px;
+  margin-top: 50px;
 }
 
 
@@ -219,15 +271,29 @@ page projet
 }
 
 
-.ligneprojet .deuxcolonnes{
+ .ligneprojet .deuxcolonnes{
   width: 500px;
   border: 1px solid black;
   margin: 100px;
   overflow: hidden;
   line-height: 1.2em;
   font-family: sans-serif;
-  
+  }
+
+
+
+.ligneimages .figure{
+  width: 1vw;
+  margin: auto;
+
 }
+
+#grandeligneprojet{
+  width: 75vw;
+  margin: auto;
+
+}
+
 
 
 
@@ -240,7 +306,7 @@ page projet
 
 
 
-.troisligneprojet figure{
+.troisligneprojet {
   width: 500px;
   height: 400px;
   margin-top: 50px;
@@ -258,11 +324,44 @@ page projet
 }
 
 
-#vimeo{
-  padding:177.78% 0 0 0;
-  position:relative;
-
+#content-small {
+    display: none;
 }
+
+/* Afficher le contenu grand écran par défaut */
+#content-large {
+    display: block;
+}
+
+#petitconteneurproj {
+    display: none;
+    visibility: visible !important;
+}
+
+/* Afficher le contenu grand écran par défaut */
+#grandconteneurproj {
+    display: block;
+}
+
+#video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 50vw; /* Ajuste la largeur pour qu'elle s'intègre dans la mise en page */
+  max-width: 500px; /* Limite la taille maximale pour éviter qu'elle ne prenne trop d'espace */
+}
+
+.video iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9; /* Conserve le ratio d'aspect pour la vidéo */
+  border-radius: 8px; /* Donne un petit arrondi pour un effet esthétique */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Ajoute une ombre pour mieux intégrer la vidéo dans la page */
+  overflow: hidden;
+}
+
+
 
 
 
