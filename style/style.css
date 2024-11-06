@@ -17,6 +17,14 @@ body{
 
 }
 
+#indexbody{
+  background-color:white;
+  color: white;
+  text-decoration: none;
+
+}
+
+
 #slideshow {
   position: fixed; /* Fixe la vidéo en arrière-plan */
   top: 0;
