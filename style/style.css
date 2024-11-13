@@ -315,6 +315,7 @@ page projet
 
 
 #conteneurproj nav {
+  margin-top: 50px;
   display: flex;
   justify-content: space-between;  /* Espacer les liens */
   align-items: center;             /* Centrer verticalement */
@@ -325,6 +326,7 @@ page projet
 }
 
 .circle-link {
+
   display: inline-flex;            /* Utilisation de flexbox pour centrer le texte dans le cercle */
   align-items: center;             /* Centrer verticalement */
   justify-content: center;         /* Centrer horizontalement */
