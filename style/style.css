@@ -98,24 +98,19 @@ figcaption{
   font-size: 100px;
 }
 footer{
-  position: fixed;
-  bottom: 20px;
+  
+font-size: 20px;
   width: 100vw;
-  z-index: 1001;
+  text-align: center;
+ padding: 10px 0px;
   font-family: sans-serif;
-}
-footer ul{
-  width: calc(100% - 40px);
-  margin: auto;
-  display: flex;
-  justify-content: space-between; 
-  font-family: sans-serif; 
-}
-footer ul li{
-  width: 50%;
-  font-family: sans-serif;
+  margin-top: 50;
+  color: grey;
 }
 
+footer a:hover {
+    text-decoration: underline; /* Soulignement au survol */
+}
 .titre{ 
 font-size: 100px;
  }
@@ -329,6 +324,7 @@ page projet
   width: 70vw;
   margin: auto;
   font-family: sans-serif;
+  font-size: ;
 }
 
 
