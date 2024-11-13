@@ -410,6 +410,10 @@ page projet
   align-items: center;
   z-index: 1000;
 }
+ .mobile-warning p {
+      font-size: 28px; 
+      font-family: sans-serif;
+    }
 
 @media (max-width: 768px) { /* Si l'écran est petit, par exemple moins de 768px */
   .mobile-warning {
