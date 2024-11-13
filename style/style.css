@@ -108,9 +108,7 @@ font-size: 20px;
   color: grey;
 }
 
-footer a:hover {
-    text-decoration: underline; /* Soulignement au survol */
-}
+
 .titre{ 
 font-size: 100px;
  }
@@ -316,16 +314,35 @@ page projet
 }
 
 
-#conteneurproj nav{
+#conteneurproj nav {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 150px;
-  width: 70vw;
-  margin: auto;
+  justify-content: space-between;  /* Espacer les liens */
+  align-items: center;             /* Centrer verticalement */
+  width: 100%;                     /* Utilise 100% de la largeur du parent */
+  margin: auto;                    /* Centrer le nav horizontalement */
   font-family: sans-serif;
-  font-size: ;
+  font-size: 50px;
 }
+
+.circle-link {
+  display: inline-flex;            /* Utilisation de flexbox pour centrer le texte dans le cercle */
+  align-items: center;             /* Centrer verticalement */
+  justify-content: center;         /* Centrer horizontalement */
+  width: 60px;                     /* Taille du cercle */
+  height: 60px;
+  border-radius: 50%;              /* Forme circulaire */
+  background-color: #333;          /* Couleur de fond */
+  color: white;                    /* Couleur du texte */
+  font-size: 30px;                 /* Augmenter la taille du texte */
+  text-decoration: none;           /* Enlever le soulignement */
+  transition: transform 0.3s ease; /* Animation au survol */
+  margin: 0 20px;                  /* Espacement entre les cercles */
+}
+
+.circle-link:hover {
+  transform: scale(1.1);           /* Ajouter un effet de zoom au survol */
+}
+
 
 
 #content-small {
