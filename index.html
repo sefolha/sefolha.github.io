@@ -40,6 +40,26 @@
 				</video>	
 		</div>
 
+
+		<div id="mobile-warning" class="mobile-warning">
+  <p>Ce site n'est pas disponible en version mobile. Veuillez visiter sur un ordinateur de bureau.</p>
+</div>
+
+
+
+
+<script>
+    window.onload = function() {
+      if (window.innerWidth <= 768) {
+        document.getElementById("mobile-warning").style.display = "flex";
+      }
+    };
+    
+    function closeWarning() {
+      document.getElementById("mobile-warning").style.display = "none";
+    }
+  </script>
+
 		
 		
 	
