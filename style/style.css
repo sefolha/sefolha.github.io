@@ -419,6 +419,8 @@ page projet
   .mobile-warning {
     display: flex; /* Affiche la fenêtre */
   }
+
+  
 }
 @media (min-width: 768px) { /* Si l'écran est petit, par exemple moins de 768px */
   .mobile-warning {

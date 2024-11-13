@@ -49,16 +49,24 @@
 
 
 <script>
-    window.onload = function() {
-      if (window.innerWidth <= 768) {
-        document.getElementById("mobile-warning").style.display = "flex";
-      }
-    };
-    
-    function closeWarning() {
-      document.getElementById("mobile-warning").style.display = "none";
+  // Fonction pour vérifier la taille de l'écran
+  function checkScreenWidth() {
+    // Utiliser matchMedia pour détecter les petits écrans
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+    if (isMobile) {
+      document.getElementById("mobile-warning").style.display = "flex"; // Afficher sur mobile
+    } else {
+      document.getElementById("mobile-warning").style.display = "none"; // Masquer sur grand écran
     }
-  </script>
+  }
+
+  // Exécuter la fonction au chargement de la page
+  window.onload = checkScreenWidth;
+
+  // Écouter le redimensionnement de la fenêtre
+  window.onresize = checkScreenWidth;
+</script>
 
 		
 		
