@@ -247,7 +247,11 @@ page projet
 }
 
 
+.contenueclat{
+  width: 100%;
+  margin: auto;
 
+}
 
 .contenuprojet{
   width: 75vw;
