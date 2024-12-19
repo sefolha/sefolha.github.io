@@ -13,7 +13,7 @@
     <link rel="stylesheet" media="screen and (max-width:768px)" href="style/petitstyle.css">
 </head>
 
-<body>
+<body id="graphisme">
 
     <header>
         <a href="index.html">
@@ -44,7 +44,41 @@
                     <h6>2024 - Identité visuelle</h6>
                 </a>
             </article>
+             </article>
+                        <article class="zoomable">
+                <a href="timbre.html">
+                    <figure>
+                        <img src="images/01timbre.jpg" alt="image timbre"> <!-- Added alt attribute -->
+                    </figure>
+                    <h5>Timbre</h5>
+                    <h6>2024 - Illustration, Animation</h6>
+                </a>
+            </article>
+            <article>
+                <!-- Article vide pour l'espace vide -->
+            </article>
+        </div>
+
+
+
+
+         <div class="ligne">
+            <article>
+                <!-- Article vide pour l'espace vide -->
+            </article>
+                        
+            </article>
             <article class="zoomable">
+                <a href="jpo.html">
+                    <figure>
+                        <img src="images/01jpo.jpg" alt="illustration monsieur"> 
+                    </figure>
+                    <h5>Affiche Journée portes ouvertes</h5>
+                    <h6>2024 - Affiche</h6>
+                </a>
+            </article>
+
+<article class="zoomable">
                 <a href="Mutekprojet.html">
                     <figure>
                         <img src="images/mutekVignette.jpg" alt="Mutek"> <!-- Added alt attribute -->
@@ -53,16 +87,13 @@
                     <h6>2024 - Affiche animée</h6>
                 </a>
             </article>
-            <article>
-                <!-- Article vide pour l'espace vide -->
-            </article>
         </div>
+
+
 
         <!-- Deuxième ligne -->
         <div class="ligne">
-            <article>
-                <!-- Article vide pour l'espace vide -->
-            </article>
+          
             <article class="zoomable">
                 <a href="teaserprojet.html">
                     <figure>
@@ -81,19 +112,23 @@
                     <h6>2024 - Édition</h6>
                 </a>
             </article>
+            <article>
+                <!-- Article vide pour l'espace vide -->
+            </article>
         </div>
 
         <!-- Troisième ligne -->
         <div class="ligne">
-            <article class="zoomable">
-                <a href="plageGalactique.html">
+             <article class="zoomable">
+                <a href="SBK.html">
                     <figure>
-                        <img src="images/plageGalactiqueVignette.jpg" alt="Plage Galactique"> <!-- Added alt attribute -->
+                        <img src="images/SBKvignette.jpg" alt="Graphisme dansant"> <!-- Added alt attribute -->
                     </figure>
-                    <h5>Plage Galactique</h5>
-                    <h6>2023 - BD</h6>
+                    <h5>Graphisme dansant</h5>
+                    <h6>2024 - Identité visuelle</h6>
                 </a>
             </article>
+            
             <article class="zoomable">
                 <a href="DMDMprojettype.html">
                     <figure>
@@ -145,13 +180,13 @@
             <article>
                 <!-- Article vide pour l'espace vide -->
             </article>
-            <article class="zoomable">
-                <a href="SBK.html">
+           <article class="zoomable">
+                <a href="plageGalactique.html">
                     <figure>
-                        <img src="images/SBKvignette.jpg" alt="Graphisme dansant"> <!-- Added alt attribute -->
+                        <img src="images/plageGalactiqueVignette.jpg" alt="Plage Galactique"> <!-- Added alt attribute -->
                     </figure>
-                    <h5>Graphisme dansant</h5>
-                    <h6>2024 - Identité visuelle</h6>
+                    <h5>Plage Galactique</h5>
+                    <h6>2023 - BD</h6>
                 </a>
             </article>
         </div>
@@ -383,19 +418,29 @@
 
     <script>
         const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target); // Arrête d'observer après l'apparition
-                }
-            });
-        }, {
-            threshold: 0.2 // Se déclenche lorsque 20 % de l'élément est visible
-        });
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target); // Arrête d'observer après l'apparition
+        }
+    });
+}, {
+    threshold: 0.04 // Se déclenche lorsque 30 % de l'élément est visible
+});
 
-        document.querySelectorAll('.zoomable').forEach(element => {
-            observer.observe(element);
-        });
+document.querySelectorAll('.zoomable').forEach(element => {
+    observer.observe(element);
+});
+
+window.addEventListener('scroll', () => {
+    const scrollPosition = window.scrollY; // Position actuelle du défilement
+    const documentHeight = document.body.scrollHeight - window.innerHeight; // Hauteur totale défilable
+    const scrollPercentage = scrollPosition / documentHeight; // Pourcentage de défilement (0 à 1)
+
+    console.log(`Scroll percentage: ${scrollPercentage * 1000}%`); // Facultatif pour déboguer
+});
+
+        
     </script>
 
 </body>

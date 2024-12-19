@@ -14,15 +14,10 @@ body{
   background-color:black;
   color: white;
   text-decoration: none;
-
 }
 
-#indexbody{
-  background-color:white;
-  color: white;
-  text-decoration: none;
 
-}
+
 
 
 #slideshow {
@@ -81,7 +76,7 @@ header{
 
 
 header ul{
-  width: 40vw;
+  width: 20vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -91,7 +86,6 @@ header ul{
 header ul li{
   text-transform: uppercase;
   font-size: 1.1em;
-
 }
 
 figcaption{
@@ -164,7 +158,7 @@ page intro projet et divers
     transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Transition plus lente pour une apparition douce */
 }
 
-.zoomable:hover {
+{
     transform: scale(1.05); /* Un zoom léger au survol pour garder l'effet subtil */
 }
 
@@ -173,18 +167,25 @@ page intro projet et divers
     transform: translateY(0); /* Reprend sa position initiale */
 }
 
+.zoomable {
+    transition: transform 0.3s ease-in-out; /* Animation fluide sur 0.3 secondes */
+}
 
+/* Déplace l'article vers le haut sur hover */
+.zoomable:hover {
+    transform: translateY(-10px); /* Déplace l'élément vers le haut de 10px */
+}
 
 .ligne article h5{
   font-size: 20px;
   margin-bottom: 5px;
-  margin-top: px;
+  margin-top: 20px;
   font-family: sans-serif;
 }
 
 .ligne article h6{
   margin-bottom: 5px;
-  margin-top: 5px;
+  margin-top: 10px;
   font-family: sans-serif;
 }
 
@@ -203,13 +204,12 @@ page projet
 #conteneurproj{
   border: 1px;
   width: 100vw;
-  padding-top: 100px;
+  padding-top: 120px;
 }
 
 #introprojet{
   width: 50vw;
-  height: 300px;
-  border: 1px;
+  height: 400px;
 }
 
       #introprojet h2{
@@ -223,12 +223,12 @@ page projet
       #introprojet h3{
         font-size: 2em;
         margin-left: 20px;
-        margin-top: 10px;
+        margin-top: 30px;
         font-family: sans-serif;
       }
 
       #introprojet h4{
-        font-size: 1.5em;
+        font-size: 1.3em;
         text-transform: uppercase;
         margin-top: 0.3em;
         margin-left: 20px;
@@ -244,6 +244,48 @@ page projet
 
 .video #animDMDM {
   width: 100%;
+}
+.video #animAfficheJpo {
+  width: 100%;
+}
+
+#video-section {
+    position: relative;
+    width: 100vw; /* Utilise toute la largeur de l'écran */
+    height: calc(100vw * 9 / 16); /* Ratio 16:9 */
+    margin: 0; /* Supprime toutes les marges */
+    padding: 0; /* Supprime tous les paddings */
+    overflow: hidden; /* Empêche tout débordement */
+}
+
+#video-section-timbre {
+    position: relative;
+    width: 100vw; /* Utilise toute la largeur de l'écran */
+    height: calc(100vw * 9 / 16); /* Ratio 16:9 */
+    margin: 0; /* Supprime toutes les marges */
+    padding: 0; /* Supprime tous les paddings */
+    overflow: hidden; /* Empêche tout débordement */
+}
+
+
+
+/* L'iframe de la vidéo */
+#video-section iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* S'étend sur toute la largeur */
+    height: 100%; /* S'étend sur toute la hauteur calculée */
+    border: none; /* Supprime les bordures */
+}
+
+#video-section-timbre iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* S'étend sur toute la largeur */
+    height: 100%; /* S'étend sur toute la hauteur calculée */
+    border: none; /* Supprime les bordures */
 }
 
 
@@ -263,7 +305,7 @@ page projet
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-top: 50px;
+  margin-top: 10px;
 }
 
 
@@ -278,7 +320,7 @@ page projet
 
  .ligneprojet .deuxcolonnes{
   width: 500px;
-  border: 1px solid black;
+  
   margin: 100px;
   overflow: hidden;
   line-height: 1.2em;
@@ -330,23 +372,25 @@ page projet
 }
 
 .circle-link {
-
-  display: inline-flex;            /* Utilisation de flexbox pour centrer le texte dans le cercle */
-  align-items: center;             /* Centrer verticalement */
-  justify-content: center;         /* Centrer horizontalement */
-  width: 60px;                     /* Taille du cercle */
-  height: 60px;
-  border-radius: 50%;              /* Forme circulaire */
-  background-color: #333;          /* Couleur de fond */
-  color: white;                    /* Couleur du texte */
-  font-size: 30px;                 /* Augmenter la taille du texte */
-  text-decoration: none;           /* Enlever le soulignement */
-  transition: transform 0.3s ease; /* Animation au survol */
-  margin: 0 20px;                  /* Espacement entre les cercles */
+    display: inline-flex;            /* Centrer le texte dans le cercle */
+    align-items: center;             /* Centrer verticalement */
+    justify-content: center;         /* Centrer horizontalement */
+    width: 60px;                     /* Taille du cercle */
+    height: 60px;                    /* Hauteur identique pour former un cercle */
+    border-radius: 50%;              /* Forme circulaire */
+              /* Couleur de fond du cercle */
+    color: white;                    /* Couleur du texte */
+    font-size: 90px;                 /* Taille du texte (ajustée pour des flèches) */
+    text-decoration: none;           /* Pas de soulignement */
+    transition: transform 0.3s ease; /* Animation lors du survol */
+    margin: 0 20px;     
+    padding: 30px;
+    margin-top: 30px;             /* Espacement horizontal entre les cercles */
 }
 
 .circle-link:hover {
-  transform: scale(1.1);           /* Ajouter un effet de zoom au survol */
+    transform: scale(1.1);
+    text-decoration: none;           /* Effet de zoom au survol */
 }
 
 
