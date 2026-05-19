@@ -1,55 +1,211 @@
-
+<!DOCTYPE html>
 <html lang="fr">
+<head>
 
-	<head>
-  		<meta charset="utf-8">
-  		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  		<title>Portfolio</title>
-  		<link rel="stylesheet" href="style/reset.css">
-		<link rel="stylesheet" href="style/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="style/reset.css">
+  <link rel="stylesheet" href="https://use.typekit.net/alm5gfd.css">
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="https://use.typekit.net/cpg8qip.css">
+  <link rel="icon" href="import/bouledisco.png" type="image/png">
+</head>
+
+<body id="mosaique">
+
+<header>
+  <div id="logo">
+    <a href="index.html"></a>
+  </div>
+
+  <ul>
+    <li><a href="index.html">Projects</a></li>
+    
+    <li><a href="about.html">About</a></li>
+  </ul>
+</header>
+
+<!-- LAYOUT GLOBAL -->
+<div class="layout-mosaique">
+
+  <!-- FILTRES GAUCHE -->
+  <div class="barre-filtres">
+
+<div class="barre-filtres">
+  <button class="filtre actif" data-filtre="all">
+    <img src="import/avatar.png" alt="Tout" class="avatar-bigger">
+    <span class="tooltip">All</span>
+  </button>
+
+  <button class="filtre" data-filtre="visual">
+    <img src="import/soleil.png" alt="Visual identity">
+    <span class="tooltip">Brand strategy</span>
+  </button>
+
+   <button class="filtre" data-filtre="event">
+    <img src="import/bouledisco.png" alt="Event" class="boule-disco">
+    <span class="tooltip">Event</span>
+  </button>
+
+ <button class="filtre" data-filtre="motion">
+    <img src="import/motion.png" alt="Motion" class="motion-bigger">
+    <span class="tooltip">Motion Design</span>
+</button>
+
+   <button class="filtre" data-filtre="Typography">
+    <img src="import/typo.png" alt="TYPO">
+    <span class="tooltip">Typography</span>
+  </button>
+  <button class="filtre" data-filtre="Illustration">
+    <img src="import/tortue.png" alt="ILLU">
+    <span class="tooltip">Illustration</span>
+  </button>
+  <button class="filtre" data-filtre="photography">
+    <img src="import/02appareil.png" alt="Photographie">
+    <span class="tooltip">Photography</span>
+  </button>
+
+</div>
 
 
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet">
-	</head>
-	<body id="indexbody">
+  </div>
 
-		<header>
-			
-					<li>site en construction...</li>
-			
-		</header>
-		
+  <!-- GRILLE -->
+  <section class="grille-projets">
 
-	
+    <a href="chenaie.html" class="carte-projet" data-category="visual">
+      <div class="image-wrapper">
+        <img src="import/01chenaie.png" alt="Chênaie">
+      </div>
+      <h3 class="titre-projet">Chênaie, Les domaines.</h3><h4 class="date">2026 - Visual identity</h4>
+      
+    </a>
+
+    <a href="new.html" class="carte-projet" data-category="visual Typography">
+      <div class="image-wrapper">
+        <img src="import/newad.jpg" alt="New Day">
+      </div>
+      <h3 class="titre-projet">New Day</h3><h4 class="date">2025 - Visual identity</h4>
+      
+    </a>
+
+<a href="product.html" class="carte-projet" data-category="visual">
+      <div class="image-wrapper">
+        <img src="import/01produit.png" alt="Produit">
+      </div>
+      <h3 class="titre-projet">Blossom GEL </h3><h4 class="date">2025 - Advertisement</h4>  
+    </a>
+
+     <a href="memoire.html" class="carte-projet" data-category="visual">
+      <div class="image-wrapper">
+        <img src="import/memoirecouv.jpg" alt="Produit">
+      </div>
+      <h3 class="titre-projet">Évolution de l'identité de marque </h3><h4 class="date">2025 - Dissertation</h4>
+    </a>
+
+<a href="EtSi.html" class="carte-projet" data-category="photography">
+      <div class="image-wrapper">
+        <img src="import/EtSi01.jpg" alt="Senlisse">
+      </div>
+      <h3 class="titre-projet">Et si le luxe?</h3><h4 class="date">2026 - Advertisement</h4>
+      
+    </a>  
+    <a href="catch.html" class="carte-projet" data-category="event visual">
+      <div class="image-wrapper">
+        <img src="import/05catch.jpg" alt="Gen Z">
+      </div>
+      <h3 class="titre-projet">Catcher les Codes de la Gen Z</h3><h4 class="date">2025 - Communication campaign</h4>
+      
+    </a>
+
+   
+
+     <a href="generique.html" class="carte-projet" data-category="motion">
+      <div class="image-wrapper">
+        <img src="import/01generique.png" alt="American Gigolo">
+      </div>
+      <h3 class="titre-projet">American Gigolo</h3><h4 class="date">2026 - Film credits</h4>
+      </a>
 
 
 
+   <a href="mutek.html" class="carte-projet" data-category="motion event">
+      <div class="image-wrapper">
+        <img src="import/mutekcouv.jpg" alt="Mutek">
+      </div>
+      <h3 class="titre-projet">Mutek</h3><h4 class="date">2024 - Animated posters </h4>
+      </a>
 
+    <a href="timbre.html" class="carte-projet" data-category="Illustration motion">
+      <div class="image-wrapper">
+        <img src="import/01timbre.jpg" alt="Flamingo">
+      </div>
+      <h3 class="titre-projet">Flamingo Liberation</h3><h4 class="date">2025 - Animated stamp</h4>  
+    </a>
 
+ <a href="capVert.html" class="carte-projet" data-category="photography">
+      <div class="image-wrapper">
+        <img src="import/capvert01.jpg" alt="Cap-Vert">
+      </div>
+      <h3 class="titre-projet">Tu es chez toi</h3><h4 class="date">2024 - Photography series</h4>
+      
+    </a>  
+
+   
+
+   
+
+  
+   
+  </section>
+
+</div>
+
+<!-- SCRIPT FILTRE -->
 <script>
-  // Fonction pour vérifier la taille de l'écran
-  function checkScreenWidth() {
-    // Utiliser matchMedia pour détecter les petits écrans
-    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+document.addEventListener("DOMContentLoaded", () => {
+  const boutons = document.querySelectorAll(".filtre");
+  const projets = document.querySelectorAll(".carte-projet");
 
-    if (isMobile) {
-      document.getElementById("mobile-warning").style.display = "flex"; // Afficher sur mobile
-    } else {
-      document.getElementById("mobile-warning").style.display = "none"; // Masquer sur grand écran
-    }
-  }
+  // Fonction pour animer les projets
+  const animerProjets = () => {
+    projets.forEach((projet, index) => {
+      projet.style.opacity = "0";
+      projet.style.animation = "none";
+      void projet.offsetWidth;
+      projet.style.animation = "fadeIn 0.5s ease forwards";
+      projet.style.animationDelay = `${index * 0.2}s`;
+    });
+  };
 
+  // Appliquer l'animation au chargement de la page
+  animerProjets();
 
+  // Appliquer l'animation au clic sur un bouton de filtre
+  boutons.forEach(bouton => {
+    bouton.addEventListener("click", () => {
+      boutons.forEach(btn => btn.classList.remove("actif"));
+      bouton.classList.add("actif");
 
-  // Écouter le redimensionnement de la fenêtre
-  window.onresize = checkScreenWidth;
+      const filtre = bouton.getAttribute("data-filtre");
+
+      projets.forEach(projet => {
+        const categorie = projet.getAttribute("data-category");
+        if (filtre === "all" || categorie.split(' ').includes(filtre)) {
+          projet.style.display = "block";
+        } else {
+          projet.style.display = "none";
+        }
+      });
+
+      // Réappliquer les animations après le filtrage
+      setTimeout(animerProjets, 50);
+    });
+  });
+});
 </script>
 
-		
-		
-	
-	
-	</body>	
+
+</body>
 </html>

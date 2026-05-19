@@ -11,469 +11,713 @@ a:hover{
 }
 
 body{
-  background-color:black;
-  color: white;
-  text-decoration: none;
-}
-
-
-
-
-
-#slideshow {
-  position: fixed; /* Fixe la vidéo en arrière-plan */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1; /* Place la vidéo en dessous de tout */
-  overflow: hidden;
-}
-
-/* Style de la vidéo */
-#slideshow video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Couvre tout l'écran sans déformer la vidéo */
-}
-
-/* Style du header pour le maintenir au-dessus */
-#indexheader {
-  position: relative; /* Peut aussi être fixed ou absolute si nécessaire */
-  z-index: 1; /* Assure que le header est au-dessus de la vidéo */
-  width: 100%;
-  background-color: transparent; /* Pas de fond */
-  color: white;
-  mix-blend-mode: difference;
-}
-#indexheader ul li{
-  text-transform: uppercase;
-  font-size: 1.1em;
-    color: inherit;
-
-}
-header{
-  
-  top: 20px;
-  width: 100vw;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 10000;
+  background-color:white;
+  color: black;
   font-family: sans-serif;
 }
 
-#logo{
-  height: 60px;
-  margin-top: 20px;
-  margin-left: 20px;
-  font-size: 30px;
+
+
+header {
+ /* Remplace 'static' par 'fixed' */
+    top: 0; /* Positionne en haut de la fenêtre */
+    left: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
 }
 
-#logo img{
-  height: 100%;
-}
 
 
 header ul{
-  width: 20vw;
+  height: 6vw;
+  width: 11.5vw;
+  margin-right: 2vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-right: 20px;
+  
 }
 
 header ul li{
-  text-transform: uppercase;
-  font-size: 1.1em;
-}
-
-figcaption{
-  font-size: 100px;
-}
-footer{
   
-font-size: 20px;
-  width: 100vw;
-  text-align: center;
- padding: 10px 0px;
-  font-family: sans-serif;
-  margin-top: 50;
-  color: grey;
+  font-size: 1.0em;
 }
 
 
-.titre{ 
-font-size: 100px;
- }
-/* 
-page intro projet et divers
- */
-
-
-#content-large{
-  width: 80vw;
-  margin: 200px auto 100px;
-}
-
-.ligne{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  width: 100%;
-  margin-bottom:10%;
-
-
+header ul li a {
+    font-size: 1em;
+    padding: 6px 14px;
+    border: 1px solid black;
+    border-radius: 20px;
+    text-decoration: none;
+    color: black;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+    cursor: pointer;
+    display: inline-block;
 
 }
 
-.ligne article{
-  width: calc(33.33% - 20px);
-  margin-bottom: 10px;
-  
+header ul li a:hover {
+    transform: scale(1.08);
+    background-color: black;
+    color: white;
+    text-decoration: none;
 }
 
-.ligne article figure{
-  width: 100%;
-  height: 20vw;
-  margin-bottom: 5px;
- 
-  overflow: hidden;
-  border-radius: 10px;
+header ul li a:active {
+    transform: scale(0.98);
 }
 
 
 
-.ligne article figure img{
-  width: 100%;
-  transition: transform 0.3s ease;
-}
-.ligne article figure img:hover {
-    transform: scale(1.1); /* Zoom à 110% */
-
-}
-.zoomable {
-    opacity: 0;
-    transform: translateY(50px); /* Décalage vers le bas pour l'effet de montée */
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Transition plus lente pour une apparition douce */
-}
-
-{
-    transform: scale(1.05); /* Un zoom léger au survol pour garder l'effet subtil */
-}
-
-.zoomable.visible {
-    opacity: 1;
-    transform: translateY(0); /* Reprend sa position initiale */
-}
-
-.zoomable {
-    transition: transform 0.3s ease-in-out; /* Animation fluide sur 0.3 secondes */
-}
-
-/* Déplace l'article vers le haut sur hover */
-.zoomable:hover {
-    transform: translateY(-10px); /* Déplace l'élément vers le haut de 10px */
-}
-
-.ligne article h5{
-  font-size: 20px;
-  margin-bottom: 5px;
-  margin-top: 20px;
-  font-family: sans-serif;
-}
-
-.ligne article h6{
-  margin-bottom: 5px;
-  margin-top: 10px;
-  font-family: sans-serif;
-}
 
 
-
-figure img{
-  width: 100%;
-}
 
 /*
-page projet
-*/
+dP 888888ba  888888ba   88888888b dP    dP 
+88 88    `8b 88    `8b  88        Y8.  .8P 
+88 88     88 88     88 a88aaaa     Y8aa8P  
+88 88     88 88     88  88        d8'  `8b 
+88 88     88 88    .8P  88        88    88 
+dP dP     dP 8888888P   88888888P dP    dP 
+                                           
+ */                                          
+/* Effet de fondu pour la page Creative Lab */
 
+./* =========================
+   LAYOUT GLOBAL
+========================= */
 
-
-#conteneurproj{
-  border: 1px;
-  width: 100vw;
-  padding-top: 120px;
+.layout-mosaique {
+    display: flex;
+    align-items: flex-start;
 }
 
-#introprojet{
-  width: 50vw;
-  height: 400px;
-}
+/* =========================
+   FILTRES GAUCHE
+========================= */
 
-      #introprojet h2{
-        font-size: 3em;
-        text-transform: uppercase;
-        margin-top: 2em;
-        margin-left: 20px;
-        font-family: sans-serif;
-      }
-
-      #introprojet h3{
-        font-size: 2em;
-        margin-left: 20px;
-        margin-top: 30px;
-        font-family: sans-serif;
-      }
-
-      #introprojet h4{
-        font-size: 1.3em;
-        text-transform: uppercase;
-        margin-top: 0.3em;
-        margin-left: 20px;
-        font-family: sans-serif;
-        color: grey;
-
-      }
-
-
-.imageentiere{
-  width: 100vw;
-}
-
-.video #animDMDM {
-  width: 100%;
-}
-.video #animAfficheJpo {
-  width: 100%;
-}
-
-#video-section {
-    position: relative;
-    width: 100vw; /* Utilise toute la largeur de l'écran */
-    height: calc(100vw * 9 / 16); /* Ratio 16:9 */
-    margin: 0; /* Supprime toutes les marges */
-    padding: 0; /* Supprime tous les paddings */
-    overflow: hidden; /* Empêche tout débordement */
-}
-
-#video-section-timbre {
-    position: relative;
-    width: 100vw; /* Utilise toute la largeur de l'écran */
-    height: calc(100vw * 9 / 16); /* Ratio 16:9 */
-    margin: 0; /* Supprime toutes les marges */
-    padding: 0; /* Supprime tous les paddings */
-    overflow: hidden; /* Empêche tout débordement */
-}
-
-
-
-/* L'iframe de la vidéo */
-#video-section iframe {
-    position: absolute;
-    top: 0;
+.barre-filtres {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    padding: 2vw;
+    position: fixed;
+    top: 6vw;
     left: 0;
-    width: 100%; /* S'étend sur toute la largeur */
-    height: 100%; /* S'étend sur toute la hauteur calculée */
-    border: none; /* Supprime les bordures */
+    width: 8vw;
+    z-index: 1000;
+    align-items: center; /* Centre les boutons horizontalement dans la barre */
 }
 
-#video-section-timbre iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%; /* S'étend sur toute la largeur */
-    height: 100%; /* S'étend sur toute la hauteur calculée */
-    border: none; /* Supprime les bordures */
+.barre-filtres button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex; /* Permet de centrer l'image dans le bouton */
+    justify-content: center; /* Centre l'image horizontalement */
+    align-items: center; /* Centre l'image verticalement */
+    width: 100%; /* Prend toute la largeur disponible */
 }
 
-
-#contenueclat{
-  width: 100%;
-  margin: auto;
-
-}
-
-.contenuprojet{
-  width: 75vw;
-  margin: auto;
-
-}
-
-.ligneprojet{
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin-top: 10px;
-}
-
-
-
-.deuxligneprojet{
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin-top: 150px;
-}
-
-
- .ligneprojet .deuxcolonnes{
-  width: 500px;
-  
-  margin: 100px;
-  overflow: hidden;
-  line-height: 1.2em;
-  font-family: sans-serif;
-  }
-
-
-
-.ligneimages .figure{
-  width: 1vw;
-  margin: auto;
-
-}
-
-#grandeligneprojet{
-  width: 75vw;
-  margin: auto;
-
-}
-
-
-
-
-
-
-.ligneprojet figure{
-  width: 500px;
-  height: 600px;
-}
-
-
-
-.troisligneprojet {
-  width: 500px;
-  height: 400px;
-  margin-top: 50px;
-}
-
-
-#conteneurproj nav {
-  margin-top: 50px;
-  display: flex;
-  justify-content: space-between;  /* Espacer les liens */
-  align-items: center;             /* Centrer verticalement */
-  width: 100%;                     /* Utilise 100% de la largeur du parent */
-  margin: auto;                    /* Centrer le nav horizontalement */
-  font-family: sans-serif;
-  font-size: 50px;
-}
-
-.circle-link {
-    display: inline-flex;            /* Centrer le texte dans le cercle */
-    align-items: center;             /* Centrer verticalement */
-    justify-content: center;         /* Centrer horizontalement */
-    width: 60px;                     /* Taille du cercle */
-    height: 60px;                    /* Hauteur identique pour former un cercle */
-    border-radius: 50%;              /* Forme circulaire */
-              /* Couleur de fond du cercle */
-    color: white;                    /* Couleur du texte */
-    font-size: 90px;                 /* Taille du texte (ajustée pour des flèches) */
-    text-decoration: none;           /* Pas de soulignement */
-    transition: transform 0.3s ease; /* Animation lors du survol */
-    margin: 0 20px;     
-    padding: 30px;
-    margin-top: 30px;             /* Espacement horizontal entre les cercles */
-}
-
-.circle-link:hover {
-    transform: scale(1.1);
-    text-decoration: none;           /* Effet de zoom au survol */
-}
-
-
-
-#content-small {
-    display: none;
-}
-
-/* Afficher le contenu grand écran par défaut */
-#content-large {
+.barre-filtres img {
+    height: 5.5vw;
+    width: auto;
     display: block;
+    transition: transform 0.2s ease;
+    margin: 0 auto; /* Centre l'image si nécessaire (redondant avec flex) */
 }
 
-#petitconteneurproj {
-    display: none;
-    visibility: visible !important;
-}
-
-/* Afficher le contenu grand écran par défaut */
-#grandconteneurproj {
-    display: block;
-}
-
-#video {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  width: 50vw; /* Ajuste la largeur pour qu'elle s'intègre dans la mise en page */
-  max-width: 500px; /* Limite la taille maximale pour éviter qu'elle ne prenne trop d'espace */
-}
-
-.video iframe {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16/9; /* Conserve le ratio d'aspect pour la vidéo */
-  border-radius: 8px; /* Donne un petit arrondi pour un effet esthétique */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Ajoute une ombre pour mieux intégrer la vidéo dans la page */
-  overflow: hidden;
+.barre-filtres button:hover img,
+.barre-filtres button:active img {
+    transform: scale(1.05);
 }
 
 
+/* =========================
+   GRILLE
+========================= */
 
-
-
-
-
-.mobile-warning {
-  display: none; /* Par défaut, la fenêtre est cachée */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  color: white;
-  font-size: 20px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
+.grille-projets {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1vw;
+    padding-right: 2vw;
+    margin-top: 0vw; /* Espace pour éviter le chevauchement avec le header */
+    margin-left: 15vw; /* Espace pour éviter le chevauchement avec la barre de filtres */
 }
- .mobile-warning p {
-      font-size: 50px; 
-      font-family: sans-serif;
+
+.layout-mosaique {
+    display: flex;
+    align-items: flex-start; /* 🔥 CRUCIAL */
+}
+/* Animation pour faire apparaître les projets */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
-
-@media (max-width: 768px) { /* Si l'écran est petit, par exemple moins de 768px */
-  .mobile-warning {
-    display: flex; /* Affiche la fenêtre */
-  }
-
-  
-}
-@media (min-width: 768px) { /* Si l'écran est petit, par exemple moins de 768px */
-  .mobile-warning {
-    display: none; /* Affiche la fenêtre */
-  }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
+/* Applique l'animation à chaque projet */
+.carte-projet {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    opacity: 0; /* Commence invisible */
+    animation: fadeIn 0.5s ease forwards; /* Animation de 0.5s, reste à la fin */
+}
+
+/* image */
+.image-wrapper {
+    width: 100%;
+    aspect-ratio: 4 / 2;
+    overflow: hidden;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* 🔥 TON HOVER (inchangé) */
+.carte-projet:hover img {
+    transform: scale(1.09);
+}
+
+.carte-projet,
+.carte-projet:hover,
+.carte-projet:focus,
+.carte-projet:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* texte */
+.titre-projet {
+    margin-top: 1vw;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.date {
+    margin-top: 0.2vw;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 1vw;
+    
+}
+
+.filtre {
+  position: relative;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.boule-disco {
+    animation: spin 6s linear infinite; /* Animation de 6 secondes (plus lente) */
+    transform-origin: center;
+    display: block;
+}
+.barre-filtres img.motion-bigger {
+    height: 7vw; /* Taille plus grande que les autres (5.5vw) */
+    width: auto;
+}
+
+.barre-filtres img.avatar-bigger {
+    height: 7vw; /* Taille plus grande que les autres (5.5vw) */
+    width: auto;
+}
+
+.barre-filtres {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    padding: 2vw;
+    position: fixed;
+    top: 4vw; /* Rapproche la barre du haut de la page */
+    left: 0;
+    width: 8vw;
+    z-index: 1000;
+    align-items: center;
+}
+
+
+.tooltip {
+  visibility: hidden;
+  width: auto;
+  background-color: #ff006d;
+  color: #fff;
+  text-align: center;
+  border-radius: 1vw;
+  padding: 0.5vw 0.5vw;
+  position: absolute;
+  z-index: 1;
+  left: 50%; /* Positionne à droite de l'image */
+  top: 50%; /* Aligne verticalement au milieu de l'image */
+  transform: translateY(-50%); /* Centre verticalement */
+  margin-left: 1vw; /* Espace entre l'image et la bulle */
+  opacity: 0;
+  transition: opacity 0.3s;
+  white-space: nowrap;
+  font-size: 0.8vw;
+}
+
+
+.filtre:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
 
 
 
 
 
+
+ /*  
+ 888888ba   888888ba   .88888.         dP  88888888b d888888P 
+ 88    `8b  88    `8b d8'   `8b        88  88           88    
+a88aaaa8P' a88aaaa8P' 88     88        88 a88aaaa       88    
+ 88         88   `8b. 88     88        88  88           88    
+ 88         88     88 Y8.   .8P 88.  .d8P  88           88    
+ dP         dP     dP  `8888P'   `Y8888'   88888888P    dP                                                                                                                          
+                
+
+
+/* Grille principale : 20% gauche, 80% droite */
+
+#project {
+    overflow: hidden;
+    /* Le body ne scroll jamais */
+}
+
+#projetTYPE {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    
+}
+/* Conteneur principal */
+.conteneurProjet {
+    position: relative;
+}
+
+/* Colonne de gauche étroite */
+#colonnegauche {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    height: calc(100vh - 50px);
+    width: 31vw;
+    background-color: white;
+    padding: 1vw;
+    box-sizing: border-box;
+    overflow: hidden;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#colonnegauche aside {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#colonnegauche aside p {
+    flex: 1;
+    overflow-y: auto;
+}
+
+#colonnegauche h1 {
+    font-size: 3em;
+    font-family: "miller-banner", serif;
+    line-height: 1.1;
+    font-style: italic;
+    margin-bottom: 2vw;
+    margin-top: 2.5vw;
+}
+
+#colonnegauche h4 {
+    font-size: 0.9em;
+    margin-bottom: 3vw;
+    color: black;
+}
+
+#colonnegauche h4 span {
+    float: right;
+    font-style: normal;
+}
+
+.team-section {
+    margin-top: auto;
+    padding-bottom: 2vw;
+}
+
+.team-section p {
+    font-size: 0.8em;
+    color: #888;
+}
+
+.services {
+    border-top: 1px solid #ccc;
+    padding-top: 15px;
+}
+
+.service-item {
+    font-size: 0.75em;
+    padding: 6px 12px;
+    border: 1px solid black;
+    border-radius: 20px;
+    display: inline-block;
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+.NEXT {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1vw;
+    margin-top: 10vw;
+    
+}
+
+.NEXT-item {
+    font-size: 1em;
+    padding: 6px 14px;
+    border: 1px solid black;
+    border-radius: 20px;
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.NEXT-item:hover {
+    transform: scale(1.08);
+    
+    background-color: black;
+    color: white;
+}
+
+.NEXT-item:active {
+    transform: scale(0.98);
+
+}
+
+
+
+
+/* Colonne de droite élargie */
+#colonnedroite {
+    position: fixed;
+    top: 6vw; /* même hauteur que la colonne gauche / header */
+    left: 35vw; /* commence après la colonne gauche */
+    height: calc(100vh - 6vw); /* prend toute la hauteur restante */
+    width: 65vw; /* reste de l’écran */
+    overflow-y: auto; /* scroll activé ici uniquement */
+    padding: 1vw; /* petit padding autour */
+    box-sizing: border-box;
+}
+
+/* Conteneur images 1 colonne */
+.imgunecolonne {
+    width: 100%;
+    margin-bottom: 1vw; /* espace entre les images verticalement */
+}
+
+.imgunecolonne figure {
+    width: 100%;
+    margin: 0; /* on supprime la marge par défaut pour que gap marche bien */
+}
+
+.imgunecolonne figure img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block; /* supprime l’espace sous l’image */
+}
+
+/* Conteneur images 2 colonnes */
+.imgdeuxcolonnes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1vw; /* espace horizontal et vertical entre les images */
+}
+
+.video-figure {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 2/ 3; /* même ratio que les images */
+    overflow: hidden;
+}
+
+.video-figure iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    
+}
+
+
+.video-figure-generique {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1/ 0.55; /* même ratio que les images */
+    overflow: hidden;
+}
+
+.video-figure-generique iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    
+}
+
+
+
+.video-figure-catch {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1/ 1.85; /* même ratio que les images */
+    overflow: hidden;
+}
+
+
+.video-figure-catch iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    
+}
+
+
+
+
+.imgpleinelargeur {
+    width: 100%;
+    margin-bottom: 1vw;
+}
+
+.imgpleinelargeur figure {
+    width: 100%;
+    margin: 0;
+}
+
+.imgpleinelargeur img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.texte-pleine-largeur {
+    max-width: 100%;
+    line-height: 1.5;
+    font-size: 1rem;
+    margin-bottom: 1vw;
+   text-align: left;
+}
+
+
+
+/* Figures dans la grille 2 colonnes */
+.souscolgauche figure, .souscoldroite figure {
+    width: 100%;
+    margin: 0; /* supprime toute marge pour que le gap soit exact */
+}
+
+.souscolgauche figure img, .souscoldroite figure img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block; /* supprime l’espace sous l’image */
+}
+
+.souscolgauche, .souscoldroite {
+    width: 100%;
+}
+
+.souscolgauche figure, .souscoldroite figure {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.souscolgauche figure img, .souscoldroite figure img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body#about {
+  overflow: hidden;
+}
+
+.about-wrap {
+  height: calc(100vh - 50px);
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 4vw;
+  padding-top: 6vw;
+  position: relative;
+  overflow: visible;
+}
+
+.sticker {
+  position: absolute;
+  pointer-events: all;
+  user-select: none;
+  cursor: grab;
+}
+
+.sticker:active {
+  cursor: grabbing;
+}
+
+@keyframes f1 {
+  0%,100% { transform: translateY(0) rotate(-15deg); }
+  50% { transform: translateY(-10px) rotate(-15deg); }
+}
+@keyframes f2 {
+  0%,100% { transform: translateY(0) rotate(10deg); }
+  50% { transform: translateY(-14px) rotate(10deg); }
+}
+@keyframes f3 {
+  0%,100% { transform: translateY(0) rotate(-6deg); }
+  50% { transform: translateY(-8px) rotate(-6deg); }
+}
+@keyframes f4 {
+  0%,100% { transform: translateY(0) rotate(18deg); }
+  50% { transform: translateY(-12px) rotate(18deg); }
+}
+@keyframes f5 {
+  0%,100% { transform: translateY(0) rotate(-20deg); }
+  50% { transform: translateY(-9px) rotate(-20deg); }
+}
+@keyframes f6 {
+  0%,100% { transform: translateY(0) rotate(5deg); }
+  50% { transform: translateY(-13px) rotate(5deg); }
+}
+
+.s-disco    { top: 12%;    left: 28%;   width: 11vw; animation: spin 6s linear infinite; transform-origin: center; z-index: 10; }
+.s-soleil   { top: 30%;    right: 26%;  width: 12vw;  animation: f1 4s ease-in-out infinite; z-index: 12; }
+.s-motion   { top: 55%;    right: 40%;  width: 6vw;  animation: f3 3.8s ease-in-out infinite; z-index: 13; }
+.s-avatar   { top: 30%;    left: 24%;   width: 13vw; animation: f6 4.2s ease-in-out infinite; z-index: 10; }
+.s-tortue   { top: 14%;    right: 27%;  width: 9vw; animation: f2 5s ease-in-out infinite; z-index: 10; }
+.s-typo     { bottom: 25%; right: 28%;  width: 10vw; animation: f4 4.5s ease-in-out infinite; z-index: 10; }
+.s-appareil { top: 50%;    left: 42%;   width: 16vw; animation: f5 5s ease-in-out infinite; z-index: 10; transform: rotate(-90deg); }
+
+
+
+
+
+
+
+.center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 1;
+  max-width: 500px;
+  position: relative;
+}
+
+.name-title {
+  font-family: "miller-banner", serif;
+  font-style: italic;
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  line-height: 1.1;
+  margin-bottom: 0.4rem;
+  color: #000;
+}
+
+.sub-label {
+  font-size: 0.8em;
+  color: #888;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.bio-text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 1.2rem;
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.tag {
+  font-size: 1em;
+  padding: 8px 18px;
+  border: 1px solid black;
+  border-radius: 20px;
+  color: black;
+  pointer-events: none;
+  cursor: default;
+}
+
+.cta-link {
+  display: inline-block;
+  margin-top: 2rem;
+  font-size: 0.9em;
+  padding: 8px 20px;
+  border: 1px solid black;
+  border-radius: 20px;
+  color: black;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.cta-link:hover {
+  background: black;
+  color: white;
+  transform: scale(1.06);
+  text-decoration: none;
+}

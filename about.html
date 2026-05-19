@@ -1,94 +1,78 @@
-
+<!DOCTYPE html>
 <html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="style/reset.css">
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="https://use.typekit.net/cpg8qip.css">
+  <link rel="icon" href="import/bouledisco.png" type="image/png">
+</head>
+<body id="about">
 
-	<head>
-  		<meta charset="utf-8">
-  		<title>About </title>
-  		<link rel="stylesheet" href="style/reset.css">
-		<link rel="stylesheet" href="style/style.css">
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet">
-	</head>
-	<body>
+<header>
+  <div id="logo">
+    <a href="index.html"></a>
+  </div>
+  <ul>
+    <li><a href="index.html">Projects</a></li>
+    
+    <li><a href="about.html">About</a></li>
+  </ul>
+</header>
 
-		<header>
-			<a href="index.html">
-            <div id="logo">
-                <img src="images/logo.png" alt="Logo"> 
-            </div>
-        	</a>
+<div class="about-wrap">
 
-			<ul>
-				<a href="graphisme.html">
-					<li>Graphisme</li>
-				</a>
-				<a href="diversMosaique.html">
-					<li>divers</li>
-				</a>
-				<a href="about.html">
-					<li>About</li>
-				</a>
-			</ul>
-		</header>
+  <img src="import/bouledisco.png" class="sticker s-disco" alt="">
+  <img src="import/soleil.png"     class="sticker s-soleil" alt="">
+  <img src="import/tortue.png"     class="sticker s-tortue" alt="">
+  <img src="import/motion.png"     class="sticker s-motion" alt="">
+ 
+  <img src="import/02appareil.png" class="sticker s-appareil" alt="">
+  <img src="import/avatar.png"     class="sticker s-avatar" alt="">
 
-		<div id="conteneurproj">
+  <img src="import/avatar.png"     class="sticker s-avatar" alt="">
 
-			<section class="contenuprojet">
-				
+  <div class="center-content">
+    <h1 class="name-title">Serena</h1>
+    
 
-				<div class="ligneprojet">
-					<article class="deuxcolonnes">
-					Bonjour ! Je m’appelle Serena Delgado <br> et j’ai 19 ans. Étudiante en DNMADE Graphisme Augmenté, je suis passionnée par les domaines créatifs. J’explore divers univers, <br> tels que le graphisme, la peinture, <br>la photographie, et l’animation. <br>Voici mon portfolio, regroupant des projets scolaires, professionnels <br>et des expérimentations personnelles.
-					</article>
-					<figure  class="deuxcolonnes">
-						<img src="images/01about.jpg">
-					</figure>
-				</div>
+    <p class="bio-text">Hello, my name is Serena Delgado. Currently in my third year of DN MADE Numérique, specializing in Augmented Graphics, I strive to tell stories through my projects. Curious and passionate about brand identity and creative strategies, I love exploring how design can bring cohesive and evocative visual universes to life.</p>
+    <p class="bio-text">Browse my portfolio to see how this approach comes to life in my work !!</p>
 
+    
 
+    <a href="index.html" class="cta-link">Browse my projects →</a>
+  </div>
 
+</div>
+<script>
+  document.querySelectorAll('.sticker').forEach(el => {
+    let dragging = false, ox = 0, oy = 0;
 
-				
+    el.addEventListener('mousedown', e => {
+      dragging = true;
+      const r = el.getBoundingClientRect();
+      ox = e.clientX - r.left;
+      oy = e.clientY - r.top;
+      el.style.position = 'fixed';
+      el.style.left = r.left + 'px';
+      el.style.top = r.top + 'px';
+      el.style.right = 'auto';
+      el.style.bottom = 'auto';
+      el.style.zIndex = 999;
+      e.preventDefault();
+    });
 
+    document.addEventListener('mousemove', e => {
+      if (!dragging) return;
+      el.style.left = (e.clientX - ox) + 'px';
+      el.style.top  = (e.clientY - oy) + 'px';
+    });
 
-
-
-
-
-			</section>
-
-			
-			
-
-			
-
-
-
-
-
-
-
-
-
-
-
-
-
-		</div>
-
-		
-
-		
-
-		</div>	
-				<footer>
-		    <p>2024 - Serena Delgado <br> 
-		        <a href="mailto:serenadelgado2005@gmail.com">
-		            serenadelgado2005(at)gmail.com
-		        </a>
-		    </p>
-		</footer>
-
-	</body>	
+    document.addEventListener('mouseup', () => { dragging = false; });
+  });
+</script>
+</body>
 </html>
