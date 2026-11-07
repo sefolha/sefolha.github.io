@@ -15,15 +15,15 @@
 <body id="project">
 
 <header>
-    <div id="logo">
-      <a href="index.html"></a>
-    </div>
+  <div id="identite">
+    <h1><a href="index.html">/Serena Delgado <br><em><span class="def">Graphic design student</span><span class="hov">Back to home</span></em></a></h1>
+  </div>
 
-    <ul>
-      <li><a href="index.html">Projects</a></li>
-    
-      <li><a href="about.html">About</a></li>
-    </ul>
+  <ul>
+    <li><a href="liste.html">Projects
+  </a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
 </header>
 
       
@@ -31,7 +31,7 @@
         <!-- Colonne de gauche étroite -->
         <div id="colonnegauche">
             <aside>
-              
+                <h1>Catcher les Codes<br>de la Gen Z</h1>
                 <h4>Illustrator<br>After Effects <br>Première Pro<span>2024</span></h4>
                 <p>
                     During my internship, I handled the social media communication for the event Catch Me If You Can, organized in Paris on June 24 by Group PH7, focused on Generation Z.
@@ -138,7 +138,15 @@ In “5 Questions We Won’t Ask at the Event”, I had boomers and millennials 
        
     </section>
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const images = document.querySelectorAll("#colonnedroite figure");
 
+  images.forEach((fig, i) => {
+    setTimeout(() => fig.classList.add("apparition"), 400 + i * 600);
+  });
+});
+</script>
 
 
 </body>

@@ -12,205 +12,176 @@
   <link rel="icon" href="import/bouledisco.png" type="image/png">
 </head>
 
-<body id="mosaique">
+<body id="collage">
 
 <header>
-  <div id="logo">
-    <a href="index.html"></a>
+  <div id="identite">
+    <h1><a href="index.html">/Serena Delgado <br><em>Graphic design student</em></a></h1>
   </div>
 
   <ul>
-    <li><a href="index.html">Projects</a></li>
-    
+    <li><a href="liste.html">Projects
+  </a></li>
     <li><a href="about.html">About</a></li>
   </ul>
 </header>
 
-<!-- LAYOUT GLOBAL -->
-<div class="layout-mosaique">
+<!-- COLLAGE D'IMAGES DRAGGABLES -->
+<div id="zone-collage">
 
-  <!-- FILTRES GAUCHE -->
-  <div class="barre-filtres">
-
-<div class="barre-filtres">
-  <button class="filtre actif" data-filtre="all">
-    <img src="import/avatar.png" alt="Tout" class="avatar-bigger">
-    <span class="tooltip">All</span>
-  </button>
-
-  <button class="filtre" data-filtre="visual">
-    <img src="import/soleil.png" alt="Visual identity">
-    <span class="tooltip">Brand strategy</span>
-  </button>
-
-   <button class="filtre" data-filtre="event">
-    <img src="import/bouledisco.png" alt="Event" class="boule-disco">
-    <span class="tooltip">Event</span>
-  </button>
-
- <button class="filtre" data-filtre="motion">
-    <img src="import/motion.png" alt="Motion" class="motion-bigger">
-    <span class="tooltip">Motion Design</span>
-</button>
-
-   <button class="filtre" data-filtre="Typography">
-    <img src="import/typo.png" alt="TYPO">
-    <span class="tooltip">Typography</span>
-  </button>
-  <button class="filtre" data-filtre="Illustration">
-    <img src="import/tortue.png" alt="ILLU">
-    <span class="tooltip">Illustration</span>
-  </button>
-  <button class="filtre" data-filtre="photography">
-    <img src="import/02appareil.png" alt="Photographie">
-    <span class="tooltip">Photography</span>
-  </button>
-
-</div>
-
-
+  <div class="carte" style="left:41.1vw; top:29.7vh; width:22.7vw;">
+    <img src="import/chenaiecollage.png" alt="Chênaie, Les domaines.">
   </div>
 
-  <!-- GRILLE -->
-  <section class="grille-projets">
+  <div class="carte" style="left:20.8vw; top:14.2vh; width:27.4vw;">
+    <img src="import/catchcollage.png" alt="Catcher les Codes de la Gen Z">
+  </div>
 
-    <a href="chenaie.html" class="carte-projet" data-category="visual">
-      <div class="image-wrapper">
-        <img src="import/01chenaie.png" alt="Chênaie">
-      </div>
-      <h3 class="titre-projet">Chênaie, Les domaines.</h3><h4 class="date">2026 - Visual identity</h4>
-      
-    </a>
+  <div class="carte" style="left:68.1vw; top:17.7vh; width:16.2vw;">
+    <img src="import/carteschenaie.png" alt="Tu es chez toi">
+  </div>
 
-    <a href="new.html" class="carte-projet" data-category="visual Typography">
-      <div class="image-wrapper">
-        <img src="import/newad.jpg" alt="New Day">
-      </div>
-      <h3 class="titre-projet">New Day</h3><h4 class="date">2025 - Visual identity</h4>
-      
-    </a>
+  <div class="carte" style="left:53.4vw; top:54.8vh; width:21.7vw;">
+    <img src="import/leaordi.png" alt="mockup rebranding fictif Léa Nature">
+  </div>
 
-<a href="product.html" class="carte-projet" data-category="visual">
-      <div class="image-wrapper">
-        <img src="import/01produit.png" alt="Produit">
-      </div>
-      <h3 class="titre-projet">Blossom GEL </h3><h4 class="date">2025 - Advertisement</h4>  
-    </a>
+  <div class="carte" style="left:26.5vw; top:58.8vh; width:23vw;">
+    <img src="import/01produit.png" alt="Blossom GEL">
+  </div>
 
+  <div class="carte" style="left:15.5vw; top:43vh; width:20.2vw;">
+    <img src="import/filles.jpg" alt="illustration de filles">
+  </div>
 
+  <div class="carte sans-ombre" style="left:58.3vw; top:39.9vh; width:16.8vw; --rot:1deg">
+    <img src="import/fleur.png" alt="illustration de fleur">
+  </div>
 
-
-
-
-     <a href="memoire.html" class="carte-projet" data-category="visual">
-      <div class="image-wrapper">
-        <img src="import/memoirecouv.jpg" alt="Produit">
-      </div>
-      <h3 class="titre-projet">Évolution de l'identité de marque </h3><h4 class="date">2025 - Dissertation</h4>
-    </a>
-
-<a href="etsi.html" class="carte-projet" data-category="photography">
-      <div class="image-wrapper">
-        <img src="import/etsi01.jpg" alt="Senlisse">
-      </div>
-      <h3 class="titre-projet">Et si le luxe?</h3><h4 class="date">2026 - Advertisement</h4>
-      
-    </a>  
-    <a href="catch.html" class="carte-projet" data-category="event visual">
-      <div class="image-wrapper">
-        <img src="import/05catch.jpg" alt="Gen Z">
-      </div>
-      <h3 class="titre-projet">Catcher les Codes de la Gen Z</h3><h4 class="date">2025 - Communication campaign</h4>
-      
-    </a>
-
-   
-
-     <a href="generique.html" class="carte-projet" data-category="motion">
-      <div class="image-wrapper">
-        <img src="import/01generique.png" alt="American Gigolo">
-      </div>
-      <h3 class="titre-projet">American Gigolo</h3><h4 class="date">2026 - Film credits</h4>
-      </a>
-
-
-
-   <a href="mutek.html" class="carte-projet" data-category="motion event">
-      <div class="image-wrapper">
-        <img src="import/mutekcouv.jpg" alt="Mutek">
-      </div>
-      <h3 class="titre-projet">Mutek</h3><h4 class="date">2024 - Animated posters </h4>
-      </a>
-
-    <a href="timbre.html" class="carte-projet" data-category="Illustration motion">
-      <div class="image-wrapper">
-        <img src="import/01timbre.jpg" alt="Flamingo">
-      </div>
-      <h3 class="titre-projet">Flamingo Liberation</h3><h4 class="date">2025 - Animated stamp</h4>  
-    </a>
-
- <a href="capvert.html" class="carte-projet" data-category="photography">
-      <div class="image-wrapper">
-        <img src="import/capvert01.jpg" alt="Cap-Vert">
-      </div>
-      <h3 class="titre-projet">Tu es chez toi</h3><h4 class="date">2024 - Photography series</h4>
-      
-    </a>  
-
-   
-
-   
-
-  
-   
-  </section>
+  <div class="carte sans-ombre disco" style="left:42.5vw; top:71.7vh; width:15vw; --rot:2.5deg">
+    <img src="import/bouledisco.png" alt="image de boule disco">
+  </div>
 
 </div>
 
-<!-- SCRIPT FILTRE -->
+<div id="voile"></div>
+<!-- EMAIL EN BAS A GAUCHE -->
+<a id="email-collage" href="mailto:serenadelgado2005@gmail.com">serenadelgado2005@gmail.com</a>
+
+
+
+
+<!-- SCRIPT : APPARITION + DRAG + PREMIER PLAN -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  const boutons = document.querySelectorAll(".filtre");
-  const projets = document.querySelectorAll(".carte-projet");
+  const cartes = document.querySelectorAll("#collage .carte");
+  let zMax = 10;
 
-  // Fonction pour animer les projets
-  const animerProjets = () => {
-    projets.forEach((projet, index) => {
-      projet.style.opacity = "0";
-      projet.style.animation = "none";
-      void projet.offsetWidth;
-      projet.style.animation = "fadeIn 0.5s ease forwards";
-      projet.style.animationDelay = `${index * 0.2}s`;
+  // Apparition des cartes une à une, en léger fondu
+  cartes.forEach((carte, i) => {
+    setTimeout(() => carte.classList.add("apparition"), 300 + i * 250);
+  });
+
+  // Drag + premier plan au clic
+  cartes.forEach(carte => {
+    let enCours = false;
+    let departX = 0, departY = 0;
+    let departLeft = 0, departTop = 0;
+
+    carte.addEventListener("pointerdown", (e) => {
+      enCours = true;
+      zMax++;
+      carte.style.zIndex = zMax;
+      departX = e.clientX;
+      departY = e.clientY;
+      departLeft = carte.offsetLeft;
+      departTop = carte.offsetTop;
+      carte.setPointerCapture(e.pointerId);
     });
-  };
 
-  // Appliquer l'animation au chargement de la page
-  animerProjets();
-
-  // Appliquer l'animation au clic sur un bouton de filtre
-  boutons.forEach(bouton => {
-    bouton.addEventListener("click", () => {
-      boutons.forEach(btn => btn.classList.remove("actif"));
-      bouton.classList.add("actif");
-
-      const filtre = bouton.getAttribute("data-filtre");
-
-      projets.forEach(projet => {
-        const categorie = projet.getAttribute("data-category");
-        if (filtre === "all" || categorie.split(' ').includes(filtre)) {
-          projet.style.display = "block";
-        } else {
-          projet.style.display = "none";
-        }
-      });
-
-      // Réappliquer les animations après le filtrage
-      setTimeout(animerProjets, 50);
+    carte.addEventListener("pointermove", (e) => {
+      if (!enCours) return;
+      carte.style.left = departLeft + (e.clientX - departX) + "px";
+      carte.style.top = departTop + (e.clientY - departY) + "px";
     });
+
+    carte.addEventListener("pointerup", () => {
+      enCours = false;
+    });
+  });
+
+  // ===== MOUVEMENT AUTONOME + PARALLAXE SOURIS =====
+  let cibleX = 0, cibleY = 0;   // position de la souris (normalisée -1 à 1)
+  let x = 0, y = 0;             // valeur lissée de la souris
+
+  const profondeurs = Array.from(cartes, (carte, i) =>
+    parseFloat(carte.dataset.depth) || 40 + (i % 4) * 30
+  );
+
+  // Chaque carte a son propre flottement : vitesse, amplitude, phase
+  const flottements = Array.from(cartes, (carte, i) => ({
+    vitesse: 0.0018 + (i % 4) * 0.0007,  // les unes bougent plus vite que les autres
+    ampliX: 6 + (i % 3) * 4,             // amplitude horizontale en px
+    ampliY: 4 + (i % 5) * 3,             // amplitude verticale en px
+    rotAmpli: 0.6 + (i % 4) * 0.3,       // légère oscillation de rotation en deg
+    phase: i * 1.7                       // décalage : jamais en phase ensemble
+  }));
+
+  document.addEventListener("pointermove", (e) => {
+    cibleX = (e.clientX / window.innerWidth - 0.5) * 2;
+    cibleY = (e.clientY / window.innerHeight - 0.5) * 2;
+  });
+
+  function animer(temps) {
+    // Lissage de la souris
+    x += (cibleX - x) * 0.12;
+    y += (cibleY - y) * 0.12;
+
+    cartes.forEach((carte, i) => {
+      const f = flottements[i];
+
+      // Flottement autonome : sinusoïdes qui tournent en continu
+      const driftX = Math.sin(temps * f.vitesse + f.phase) * f.ampliX;
+      const driftY = Math.cos(temps * f.vitesse * 0.8 + f.phase) * f.ampliY;
+      const driftRot = Math.sin(temps * f.vitesse * 0.6 + f.phase) * f.rotAmpli;
+
+      // Parallaxe souris + flottement autonome, additionnés
+      carte.style.setProperty("--px", (-x * profondeurs[i] + driftX) + "px");
+      carte.style.setProperty("--py", (-y * profondeurs[i] + driftY) + "px");
+      carte.style.setProperty("--rot-souris", (y * (2 + (i % 3)) + driftRot) + "deg");
+    });
+
+    requestAnimationFrame(animer);
+  }
+  requestAnimationFrame(animer);
+
+  // ===== TRANSITION FLOU-FONDU ENTRE PAGES =====
+  const voile = document.getElementById("voile");
+
+  // À l'arrivée sur la page : on dissipe le voile s'il est actif
+  requestAnimationFrame(() => voile.classList.remove("actif"));
+
+  // Au clic sur un lien interne : voile flou, puis navigation
+  document.querySelectorAll("a[href]").forEach(lien => {
+    lien.addEventListener("click", (e) => {
+      const href = lien.getAttribute("href");
+      if (!href || href.startsWith("#") || href.startsWith("mailto:")
+          || lien.target === "_blank") return;
+
+      e.preventDefault();
+      voile.classList.add("actif");
+      document.body.classList.add("sortie");
+
+      setTimeout(() => { window.location.href = href; }, 450);
+    });
+  });
+
+  // ===== RETOUR EN ARRIÈRE (bfcache) : on nettoie le flou =====
+  window.addEventListener("pageshow", () => {
+    voile.classList.remove("actif");
+    document.body.classList.remove("sortie");
   });
 });
 </script>
-
 
 </body>
 </html>

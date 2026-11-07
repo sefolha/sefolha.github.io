@@ -3,76 +3,158 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
+  <title>Portfolio — About</title>
   <link rel="stylesheet" href="style/reset.css">
+  <link rel="stylesheet" href="https://use.typekit.net/alm5gfd.css">
   <link rel="stylesheet" href="style/style.css">
   <link rel="stylesheet" href="https://use.typekit.net/cpg8qip.css">
   <link rel="icon" href="import/bouledisco.png" type="image/png">
 </head>
+
 <body id="about">
 
 <header>
-  <div id="logo">
-    <a href="index.html"></a>
+  <div id="identite">
+    <h1><a href="index.html">/Serena Delgado <br><em><span class="def">Graphic design student</span><span class="hov">Back to home</span></em></a></h1>
   </div>
+
   <ul>
-    <li><a href="index.html">Projects</a></li>
-    
+    <li><a href="liste.html">Projects</a></li>
     <li><a href="about.html">About</a></li>
   </ul>
 </header>
 
-<div class="about-wrap">
+<div id="zone-collage">
 
-  <img src="import/bouledisco.png" class="sticker s-disco" alt="">
-  <img src="import/soleil.png"     class="sticker s-soleil" alt="">
-  <img src="import/tortue.png"     class="sticker s-tortue" alt="">
-  <img src="import/motion.png"     class="sticker s-motion" alt="">
- 
-  <img src="import/02appareil.png" class="sticker s-appareil" alt="">
-  <img src="import/avatar.png"     class="sticker s-avatar" alt="">
+  <!-- grande fleur : en dessous de l'appareil, tourne sur elle-même -->
+  <div class="carte sans-ombre tourne" style="left:2.7vw; top:51vh; width:19vw; z-index:1;">
+    <img src="import/grandefleur.png" alt="illustration de fleur">
+  </div>
 
-  <img src="import/avatar.png"     class="sticker s-avatar" alt="">
+  <!-- appareil photo -->
+  <div class="carte" style="left:7.3vw; top:15vh; width:31vw; z-index:2; --rot:-8deg;">
+    <img src="import/serenaappareil.png" alt="Serena sur l'écran d'un appareil photo">
+  </div>
 
-  <div class="center-content">
-    <h1 class="name-title">Serena</h1>
-    
-
-    <p class="bio-text">Hello, my name is Serena Delgado. Currently in my third year of DN MADE Numérique, specializing in Augmented Graphics, I strive to tell stories through my projects. Curious and passionate about brand identity and creative strategies, I love exploring how design can bring cohesive and evocative visual universes to life.</p>
-    <p class="bio-text">Browse my portfolio to see how this approach comes to life in my work !!</p>
-
-    
-
-    <a href="index.html" class="cta-link">Browse my projects →</a>
+  <!-- petite fleur : posée sur l'appareil (coin haut droit), bouge indépendamment -->
+  <div class="carte sans-ombre" style="left:26vw; top:20vh; width:14.6vw; z-index:3; --rot:6deg;">
+    <img src="import/fleur.png" alt="illustration de fleur">
   </div>
 
 </div>
+
+<div class="about-texte">
+  <p>Hello, I’m Serena!</p>
+
+  <p>I take a multidisciplinary approach to graphic design, exploring different creative fields, from print design and motion design to programming. I enjoy bringing these different skills together to serve brands and shape their visual identities. Curious and passionate about storytelling, I enjoy exploring different ways of telling stories through images, shapes and movement. Through this portfolio, I invite you to discover projects that reflect my journey, versatility and desire to explore new creative approaches.</p>
+
+  <p>I am currently pursuing a Master’s degree in Creative Strategies and Media at École Estienne (ESEIG Paris).</p>
+</div>
+
+<div id="voile"></div>
+
+<a id="email-about" href="mailto:serenadelgado2005@gmail.com">serenadelgado2005@gmail.com</a>
+
 <script>
-  document.querySelectorAll('.sticker').forEach(el => {
-    let dragging = false, ox = 0, oy = 0;
+  document.addEventListener("DOMContentLoaded", () => {
+  const cartes = document.querySelectorAll("#about .carte");
+  const texte = document.querySelector(".about-texte");
+  let zMax = 10;
 
-    el.addEventListener('mousedown', e => {
-      dragging = true;
-      const r = el.getBoundingClientRect();
-      ox = e.clientX - r.left;
-      oy = e.clientY - r.top;
-      el.style.position = 'fixed';
-      el.style.left = r.left + 'px';
-      el.style.top = r.top + 'px';
-      el.style.right = 'auto';
-      el.style.bottom = 'auto';
-      el.style.zIndex = 999;
-      e.preventDefault();
-    });
-
-    document.addEventListener('mousemove', e => {
-      if (!dragging) return;
-      el.style.left = (e.clientX - ox) + 'px';
-      el.style.top  = (e.clientY - oy) + 'px';
-    });
-
-    document.addEventListener('mouseup', () => { dragging = false; });
+  // Apparition une à une, puis le texte
+  cartes.forEach((carte, i) => {
+    setTimeout(() => carte.classList.add("apparition"), 300 + i * 250);
   });
+  setTimeout(() => texte.classList.add("apparition"), 300 + cartes.length * 250);
+
+  // Drag + premier plan au clic
+  cartes.forEach(carte => {
+    let enCours = false;
+    let departX = 0, departY = 0, departLeft = 0, departTop = 0;
+
+    carte.addEventListener("pointerdown", (e) => {
+      enCours = true;
+      zMax++;
+      carte.style.zIndex = zMax;
+      departX = e.clientX;
+      departY = e.clientY;
+      departLeft = carte.offsetLeft;
+      departTop = carte.offsetTop;
+      carte.setPointerCapture(e.pointerId);
+    });
+
+    carte.addEventListener("pointermove", (e) => {
+      if (!enCours) return;
+      carte.style.left = departLeft + (e.clientX - departX) + "px";
+      carte.style.top = departTop + (e.clientY - departY) + "px";
+    });
+
+    carte.addEventListener("pointerup", () => { enCours = false; });
+  });
+
+  // ===== MOUVEMENT AUTONOME + PARALLAXE SOURIS =====
+  let cibleX = 0, cibleY = 0;
+  let x = 0, y = 0;
+
+  const profondeurs = Array.from(cartes, (carte, i) =>
+    parseFloat(carte.dataset.depth) || 40 + (i % 4) * 30
+  );
+
+  const flottements = Array.from(cartes, (carte, i) => ({
+    vitesse: 0.0018 + (i % 4) * 0.0007,
+    ampliX: 6 + (i % 3) * 4,
+    ampliY: 4 + (i % 5) * 3,
+    rotAmpli: 0.6 + (i % 4) * 0.3,
+    phase: i * 1.7
+  }));
+
+  document.addEventListener("pointermove", (e) => {
+    cibleX = (e.clientX / window.innerWidth - 0.5) * 2;
+    cibleY = (e.clientY / window.innerHeight - 0.5) * 2;
+  });
+
+  function animer(temps) {
+    x += (cibleX - x) * 0.12;
+    y += (cibleY - y) * 0.12;
+
+    cartes.forEach((carte, i) => {
+      const f = flottements[i];
+      const driftX = Math.sin(temps * f.vitesse + f.phase) * f.ampliX;
+      const driftY = Math.cos(temps * f.vitesse * 0.8 + f.phase) * f.ampliY;
+      const driftRot = Math.sin(temps * f.vitesse * 0.6 + f.phase) * f.rotAmpli;
+
+      carte.style.setProperty("--px", (-x * profondeurs[i] + driftX) + "px");
+      carte.style.setProperty("--py", (-y * profondeurs[i] + driftY) + "px");
+      carte.style.setProperty("--rot-souris", (y * (2 + (i % 3)) + driftRot) + "deg");
+    });
+
+    requestAnimationFrame(animer);
+  }
+  requestAnimationFrame(animer);
+
+  // ===== TRANSITION FLOU-FONDU ENTRE PAGES =====
+  const voile = document.getElementById("voile");
+  requestAnimationFrame(() => voile.classList.remove("actif"));
+
+  document.querySelectorAll("a[href]").forEach(lien => {
+    lien.addEventListener("click", (e) => {
+      const href = lien.getAttribute("href");
+      if (!href || href.startsWith("#") || href.startsWith("mailto:")
+          || lien.target === "_blank") return;
+
+      e.preventDefault();
+      voile.classList.add("actif");
+      document.body.classList.add("sortie");
+      setTimeout(() => { window.location.href = href; }, 450);
+    });
+  });
+
+  window.addEventListener("pageshow", () => {
+    voile.classList.remove("actif");
+    document.body.classList.remove("sortie");
+  });
+});
 </script>
+
 </body>
 </html>

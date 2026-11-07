@@ -14,14 +14,15 @@
 <body id="project">
 
 <header>
-    <div id="logo">
-      <a href="index.html"></a>
-    </div>
+  <div id="identite">
+    <h1><a href="index.html">/Serena Delgado <br><em><span class="def">Graphic design student</span><span class="hov">Back to home</span></em></a></h1>
+  </div>
 
-    <ul>
-      <li><a href="index.html">Projects</a></li>
-      <li><a href="about.html">About</a></li>
-    </ul>
+  <ul>
+    <li><a href="liste.html">Projects
+  </a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
 </header>
 
 
@@ -59,28 +60,28 @@ My visual choices are based on the idea of freshness, as well as the product’s
   </figure>
 </div>
 
-
-
-<div class="imgdeuxcolonnes">
-    <div class="souscolgauche">
-      <figure>
-        <img src="import/productnoir.png">
-      </figure>
-    </div>
-   
-    <div class="souscoldroite">
-      <figure>
-        <img src="import/product02.png">
-      </figure>
-    </div>
-
-  </div>
- <div class="imgpleinelargeur">
+<div class="imgpleinelargeur">
   <figure>
     <img src="import/product03.png" alt="logo chênaie">
   </figure>
   </div>
 
+
+<div class="imgdeuxcolonnes">
+    <div class="souscolgauche">
+      <figure>
+        <img src="import/rogneporduct.png">
+      </figure>
+    </div>
+   
+    <div class="souscoldroite">
+      <figure>
+        <img src="import/fleurproduct.png">
+      </figure>
+    </div>
+
+  </div>
+ 
   <div class="imgdeuxcolonnes">
     <div class="souscolgauche">
       <figure>
@@ -90,7 +91,7 @@ My visual choices are based on the idea of freshness, as well as the product’s
    
     <div class="souscoldroite">
       <figure>
-        <img src="import/productglacon.png">
+        <img src="import/glaconproduct.png">
       </figure>
     </div>
 
@@ -133,7 +134,15 @@ My visual choices are based on the idea of freshness, as well as the product’s
     </section>
 
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const images = document.querySelectorAll("#colonnedroite figure");
 
+  images.forEach((fig, i) => {
+    setTimeout(() => fig.classList.add("apparition"), 400 + i * 600);
+  });
+});
+</script>
 
 </body>
 </html>

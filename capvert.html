@@ -15,15 +15,15 @@
 <body id="project">
 
 <header>
-    <div id="logo">
-      <a href="index.html"></a>
-    </div>
+  <div id="identite">
+    <h1><a href="index.html">/Serena Delgado <br><em><span class="def">Graphic design student</span><span class="hov">Back to home</span></em></a></h1>
+  </div>
 
-    <ul>
-      <li><a href="index.html">Projects</a></li>
-      
-      <li><a href="about.html">About</a></li>
-    </ul>
+  <ul>
+    <li><a href="liste.html">Projects
+  </a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
 </header>
 
 
@@ -121,7 +121,15 @@
 
 
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const images = document.querySelectorAll("#colonnedroite figure");
 
+  images.forEach((fig, i) => {
+    setTimeout(() => fig.classList.add("apparition"), 400 + i * 600);
+  });
+});
+</script>
 </body>
 </html>
 

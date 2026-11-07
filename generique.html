@@ -14,15 +14,15 @@
 <body id="project">
 
 <header>
-    <div id="logo">
-      <a href="index.html"></a>
-    </div>
+  <div id="identite">
+    <h1><a href="index.html">/Serena Delgado <br><em><span class="def">Graphic design student</span><span class="hov">Back to home</span></em></a></h1>
+  </div>
 
-    <ul>
-      <li><a href="index.html">Projects</a></li>
-    
-      <li><a href="about.html">About</a></li>
-    </ul>
+  <ul>
+    <li><a href="liste.html">Projects
+  </a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
 </header>
 
       
@@ -33,10 +33,9 @@
                 <h1>American Gigolo Opening credits <br>Liberation</h1>
                 <h4>After Effects<br>Illustrator<span>2025</span></h4>
                 <p>
-                    Ce projet d'animation en risographie illustre un article de <em>Sciences et Avenir</em> qui interroge la fidélité de la représentation du trou noir dans le film <em>Interstellar</em>, un phénomène mystérieux.<br><br>
-                   a travaillé avec ONY Agency pour créer un nouveau style visuel basé sur des matériaux 3D, des textures tactiles, des textures numériques, le minimalisme et la concision. Ce projet d'animation en risographie illustre un article de <em>Sciences et Avenir</em> qui interroge la fidélité de la représentation du trou noir dans le film <em>Interstellar</em>, un phénomène mystérieux.<br><br>
-                    Deux agences ont collaboré sur ce projet 
-                    <em>Eliza Mamonova</em> a travaillé avec ONY Agency pour créer un nouveau style visuel basé sur des matériaux 3D, des textures tactiles, des textures numériques, le minimalisme et la concision.
+                  I reimagined the opening credits of the film *American Gigolo* (1980), aiming to convey the character’s downfall through the use of color. As in the film, the color palette gradually evolves, shifting from light tones to shades of red and darker hues as Julian’s (the main character) downfall becomes imminent.
+
+The minimalist, slightly pop-inspired graphic style, along with the music, draws on the visual and sound codes of the 1980s.
                 </p>
                
 
@@ -106,6 +105,8 @@
                     <p></p>
                     <div class="services">
                         <div class="service-item">MOTION</div>
+                         <div class="service-item">RISOGRAPHY</div>
+                          <div class="service-item">NARRATION</div>
                     </div>
 
                 </div>
@@ -115,7 +116,15 @@
        
     </section>
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const images = document.querySelectorAll("#colonnedroite figure");
 
+  images.forEach((fig, i) => {
+    setTimeout(() => fig.classList.add("apparition"), 400 + i * 600);
+  });
+});
+</script>
 
 
 </body>

@@ -1,365 +1,507 @@
 
+/* ============================================
+   STYLE.CSS FINAL — remplace tout le fichier
+============================================ */
 
+/* ---------- BASE ---------- */
 
-a{
-  color: inherit;
-  text-decoration: none;
+@font-face{
+  font-family:"Apfel Grotezk";
+  src:url("../fonts/ApfelGrotezk-Regular.woff2") format("woff2"),
+      url("../fonts/ApfelGrotezk-Regular.otf") format("opentype");
+  font-weight:400;
+  font-style:normal;
+  font-display:swap;
 }
 
-a:hover{
-  text-decoration: underline;
+
+
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
-body{
-  background-color:white;
-  color: black;
-  font-family: sans-serif;
+/*
+  ███                 █████                     
+ ▒▒▒                 ▒▒███                      
+ ████  ████████    ███████   ██████  █████ █████
+▒▒███ ▒▒███▒▒███  ███▒▒███  ███▒▒███▒▒███ ▒▒███ 
+ ▒███  ▒███ ▒███ ▒███ ▒███ ▒███████  ▒▒▒█████▒  
+ ▒███  ▒███ ▒███ ▒███ ▒███ ▒███▒▒▒    ███▒▒▒███ 
+ █████ ████ █████▒▒████████▒▒██████  █████ █████
+▒▒▒▒▒ ▒▒▒▒ ▒▒▒▒▒  ▒▒▒▒▒▒▒▒  ▒▒▒▒▒▒  ▒▒▒▒▒ ▒▒▒▒▒ 
+                                                
+*/                                       
+
+/* ---------- BASE (page collage uniquement) ---------- */
+
+/* Bloque le défilement au niveau du document HTML lui-même :
+   c'est le html qui défile, pas seulement le body, donc on
+   cible le html qui contient notre body#collage */
+html:has(body#collage) {
+    overflow: hidden;   /* page 100% statique */
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
+
+body#collage {
+    margin: 0;
+    background: none;          /* plus de fond ici */
+    font-family: "Apfel Grotezk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+}
+
+/* ---------- TRANSITION ENTRE PAGES ---------- */
+
+#voile {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;                 /* au-dessus de tout */
+    backdrop-filter: blur(12px);   /* flou */
+    -webkit-backdrop-filter: blur(12px);
+    background: rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    pointer-events: none;          /* ne bloque rien par défaut */
+    transition: opacity 0.45s ease;
+}
+
+#voile.actif {
+    opacity: 1;
+    pointer-events: all;           /* bloque les clics pendant la transition */
+}
+
+/* La page entière peut légèrement s'estomper aussi */
+body {
+    transition: filter 0.45s ease;
+}
+body.sortie {
+    filter: blur(6px);
+}
+/* ---------- HEADER  ---------- */
+
 
 
 
 header {
- /* Remplace 'static' par 'fixed' */
-    top: 0; /* Positionne en haut de la fenêtre */
+    position: fixed;
+    top: 0;
     left: 0;
     width: 100vw;
+    z-index: 1500;
     display: flex;
     justify-content: space-between;
     align-items: center;
-   
+    background: none;
+    color: #fff;
+    mix-blend-mode: difference;
+    pointer-events: none;
 }
 
-
-
-header ul{
-  height: 6vw;
-  width: 11.5vw;
-  margin-right: 2vw;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  
+#identite h1 {
+    font-family: "Apfel Grotezk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 2em;
+    font-weight: 400;
+    margin-left: 3vw;
+    margin-top: 2vw;
+    line-height: 1.1;
 }
 
-header ul li{
-  
-  font-size: 1.0em;
+#identite em {
+    font-style: normal;
 }
+
+#identite a {
+    pointer-events: auto;   /* rend le lien cliquable malgré pointer-events: none sur le header */
+    display: inline-block;
+    cursor: pointer;
+}
+
+#identite .hov { display: none; }
+#identite a:hover .def { display: none; }
+#identite a:hover .hov { display: inline; }
+header ul {
+    pointer-events: auto;        /* Projects / About restent cliquables */
+    width: 12vw;
+    margin-right: 4vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+
 
 
 header ul li a {
+    font-family: "Apfel Grotezk", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 1em;
-    padding: 6px 14px;
-    border: 1px solid black;
+    font-weight: 400;
+    padding: 0.3vw 1vw;
+    color: #fff;
+    border: 1px solid #fff;      /* blanc aussi, pour que la bordure s'inverse */
     border-radius: 20px;
-    text-decoration: none;
-    color: black;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+    transition: transform 0.2s ease;
     cursor: pointer;
     display: inline-block;
-
 }
 
 header ul li a:hover {
     transform: scale(1.08);
-    background-color: black;
-    color: white;
     text-decoration: none;
 }
-
 header ul li a:active {
     transform: scale(0.98);
 }
 
+/* ---------- COLLAGE ---------- */
+
+#collage #zone-collage {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(
+        to bottom,
+        #f2f0ec 0%,
+        #f2f0ec 75%,
+        #89bfe4 100%
+    );
+}
 
 
 
+/* Chaque carte d'image */
+#collage .carte {
+    position: absolute;
+    cursor: grab;
+    user-select: none;              /* pas de sélection pendant le drag */
+    transform: rotate(var(--rot)); /* légère rotation donnée dans le HTML */
+    transition: transform 0.25s ease;
+    background: none;               /* pas de fond : image seule, sans contour blanc */
+    padding: 0;
+    /* Ombre très subtile */
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
+    z-index: 1;
+
+    /* Fondu simple : opacité uniquement, sans mouvement */
+    opacity: 0;
+}
+
+#collage .carte.apparition {
+    animation: apparaitre 0.8s ease forwards;
+}
+
+@keyframes apparaitre {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+#collage .carte:active {
+    cursor: grabbing;
+}
+
+/* pour faire bouger les image en fonction de la souris */
+#collage .carte {
+    translate: var(--px, 0px) var(--py, 0px);
+}
+#collage .carte img {
+    width: 100%;
+    display: block;
+    pointer-events: none;   /* l'image ne gêne pas le drag ni le clic */
+    -webkit-user-drag: none;
+}
+
+
+/* Pas d'ombre */
+#collage .carte.sans-ombre {
+    box-shadow: none;
+}
+
+/* Boule disco : rotation continue sur elle-même */
+#collage .carte.disco img {
+    animation: tourner 8s linear infinite;
+    transform-origin: center;
+}
+
+@keyframes tourner {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+
+/* ---------- EMAIL (même taille et typo que le titre) ---------- */
+
+#collage #email-collage {
+    position: fixed;
+    bottom: 2vh;
+    left: 3vw;
+    font-family: "Apfel Grotezk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.6em;
+    font-weight: 400;
+    line-height: 1.1;
+    z-index: 1600;
+    cursor: pointer;
+}
+
+#collage #email-collage:hover {
+    text-decoration: underline;
+}
 
 
 /*
-dP 888888ba  888888ba   88888888b dP    dP 
-88 88    `8b 88    `8b  88        Y8.  .8P 
-88 88     88 88     88 a88aaaa     Y8aa8P  
-88 88     88 88     88  88        d8'  `8b 
-88 88     88 88    .8P  88        88    88 
-dP dP     dP 8888888P   88888888P dP    dP 
-                                           
- */                                          
-/* Effet de fondu pour la page Creative Lab */
 
-./* =========================
-   LAYOUT GLOBAL
-========================= */
+  █████        ███           █████            
+▒▒███        ▒▒▒           ▒▒███             
+ ▒███        ████   █████  ███████    ██████ 
+ ▒███       ▒▒███  ███▒▒  ▒▒▒███▒    ███▒▒███
+ ▒███        ▒███ ▒▒█████   ▒███    ▒███████ 
+ ▒███      █ ▒███  ▒▒▒▒███  ▒███ ███▒███▒▒▒  
+ ███████████ █████ ██████   ▒▒█████ ▒▒██████ 
+▒▒▒▒▒▒▒▒▒▒▒ ▒▒▒▒▒ ▒▒▒▒▒▒     ▒▒▒▒▒   ▒▒▒▒▒▒  
+                                             
+ */                                           
+                                             
 
-.layout-mosaique {
+#liste  {
+    background-color: #000; /* fond noir */
+    color: #fff;            /* texte blanc */
+    font-family:"Apfel Grotezk","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.liste-projets {
+    
+    margin-top: 10vw;
+    padding: 4vh 3vw 8vh;
+    box-sizing: border-box;
+}
+
+/* Titre "WORKS" en gris clair, en haut à gauche */
+.works {
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    letter-spacing: 0.15em;
+    margin-bottom: 4vh;
+}
+
+/* Une ligne = numéro + titre + catégorie */
+.ligne-projet {
     display: flex;
-    align-items: flex-start;
+    align-items: baseline;
+    gap: 2.5vw;
+    padding: 2vh 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4); /* ligne fine blanche */
+    color: white;
+    text-decoration: none;
 }
 
-/* =========================
-   FILTRES GAUCHE
-========================= */
-
-.barre-filtres {
-    display: flex;
-    flex-direction: column;
-    gap: 1vw;
-    padding: 2vw;
-    position: fixed;
-    top: 6vw;
-    left: 0;
-    width: 8vw;
-    z-index: 1000;
-    align-items: center; /* Centre les boutons horizontalement dans la barre */
+.ligne-projet:first-of-type {
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
 }
 
-.barre-filtres button {
-    border: none;
-    background: none;
-    cursor: pointer;
-    padding: 0;
-    display: flex; /* Permet de centrer l'image dans le bouton */
-    justify-content: center; /* Centre l'image horizontalement */
-    align-items: center; /* Centre l'image verticalement */
-    width: 100%; /* Prend toute la largeur disponible */
+/* Numéro en gris clair */
+.numero {
+    font-size: 0.85rem;
+    color: white;
+    min-width: 2.5em;
 }
 
-.barre-filtres img {
-    height: 5.5vw;
-    width: auto;
-    display: block;
-    transition: transform 0.2s ease;
-    margin: 0 auto; /* Centre l'image si nécessaire (redondant avec flex) */
+/* Titre : grand, blanc, gras */
+.titre {
+    font-size: clamp(1.5rem, 3.4vw, 3.2rem);
+    font-weight: 700;
+    color: #fff;
+    transition: color 0.25s ease, transform 0.25s ease;
 }
 
-.barre-filtres button:hover img,
-.barre-filtres button:active img {
-    transform: scale(1.05);
+/* Catégorie : petit, gris, alignée à droite */
+.meta {
+    margin-left: auto;
+    font-size: 0.85rem;
+    color: #888;
+    text-align: right;
+    white-space: nowrap;
+}
+
+/* Survol : le titre glisse et passe en rose */
+.ligne-projet:hover .titre {
+    color: gray;
+    transform: translateX(1vw);
 }
 
 
-/* =========================
-   GRILLE
-========================= */
-
-.grille-projets {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1vw;
-    padding-right: 2vw;
-    margin-top: 0vw; /* Espace pour éviter le chevauchement avec le header */
-    margin-left: 15vw; /* Espace pour éviter le chevauchement avec la barre de filtres */
+.ligne-projet:hover .numero {
+    color: #fff;
 }
 
-.layout-mosaique {
-    display: flex;
-    align-items: flex-start; /* 🔥 CRUCIAL */
+/* Apparition en fondu de chaque ligne */
+.ligne-projet {
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
 }
-/* Animation pour faire apparaître les projets */
+
+.ligne-projet:nth-child(2)  { animation-delay: 0.07s; }
+.ligne-projet:nth-child(3)  { animation-delay: 0.14s; }
+.ligne-projet:nth-child(4)  { animation-delay: 0.21s; }
+.ligne-projet:nth-child(5)  { animation-delay: 0.28s; }
+.ligne-projet:nth-child(6)  { animation-delay: 0.35s; }
+.ligne-projet:nth-child(7)  { animation-delay: 0.42s; }
+.ligne-projet:nth-child(8)  { animation-delay: 0.49s; }
+.ligne-projet:nth-child(9)  { animation-delay: 0.56s; }
+.ligne-projet:nth-child(10) { animation-delay: 0.63s; }
+.ligne-projet:nth-child(11) { animation-delay: 0.70s; }
+
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Applique l'animation à chaque projet */
-.carte-projet {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    opacity: 0; /* Commence invisible */
-    animation: fadeIn 0.5s ease forwards; /* Animation de 0.5s, reste à la fin */
-}
+/* ---------- APERCU IMAGE AU SURVOL ---------- */
 
-/* image */
-.image-wrapper {
-    width: 100%;
-    aspect-ratio: 4 / 2;
+#apercu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 22vw;
+    aspect-ratio: 4 / 3;
+    pointer-events: none; /* ne gêne pas le survol */
+    z-index: 2000;
+    transform: translate(2vw, -50%); /* à droite du curseur, centrée verticalement */
+    opacity: 0;
+    transition: opacity 0.25s ease;
     overflow: hidden;
-}
-
-.image-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-/* 🔥 TON HOVER (inchangé) */
-.carte-projet:hover img {
-    transform: scale(1.09);
-}
-
-.carte-projet,
-.carte-projet:hover,
-.carte-projet:focus,
-.carte-projet:active {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* texte */
-.titre-projet {
-    margin-top: 1vw;
-    font-size: 1rem;
-    font-weight: 500;
-}
-
-.date {
-    margin-top: 0.2vw;
-    font-size: 1rem;
-    font-weight: 500;
-    margin-bottom: 1vw;
     
 }
 
-.filtre {
-  position: relative;
+#apercu.visible {
+    opacity: 1;
 }
 
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-.boule-disco {
-    animation: spin 6s linear infinite; /* Animation de 6 secondes (plus lente) */
-    transform-origin: center;
+#apercu img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     display: block;
 }
-.barre-filtres img.motion-bigger {
-    height: 7vw; /* Taille plus grande que les autres (5.5vw) */
-    width: auto;
-}
 
-.barre-filtres img.avatar-bigger {
-    height: 7vw; /* Taille plus grande que les autres (5.5vw) */
-    width: auto;
-}
+/* ---------- RESPONSIVE ---------- */
 
-.barre-filtres {
-    display: flex;
-    flex-direction: column;
-    gap: 1vw;
-    padding: 2vw;
-    position: fixed;
-    top: 4vw; /* Rapproche la barre du haut de la page */
-    left: 0;
-    width: 8vw;
-    z-index: 1000;
-    align-items: center;
+@media (max-width: 800px) {
+    .ligne-projet {
+        flex-wrap: wrap;
+        gap: 1vw;
+    }
+
+    #apercu {
+        display: none; /* pas d'aperçu flottant sur mobile */
+    }
 }
 
 
-.tooltip {
-  visibility: hidden;
-  width: auto;
-  background-color: #ff006d;
-  color: #fff;
-  text-align: center;
-  border-radius: 1vw;
-  padding: 0.5vw 0.5vw;
-  position: absolute;
-  z-index: 1;
-  left: 50%; /* Positionne à droite de l'image */
-  top: 50%; /* Aligne verticalement au milieu de l'image */
-  transform: translateY(-50%); /* Centre verticalement */
-  margin-left: 1vw; /* Espace entre l'image et la bulle */
-  opacity: 0;
-  transition: opacity 0.3s;
-  white-space: nowrap;
-  font-size: 0.8vw;
-}
+/*
+ ███████████                          ███            █████   
+▒▒███▒▒▒▒▒███                        ▒▒▒            ▒▒███    
+ ▒███    ▒███ ████████   ██████      █████  ██████  ███████  
+ ▒██████████ ▒▒███▒▒███ ███▒▒███    ▒▒███  ███▒▒███▒▒▒███▒   
+ ▒███▒▒▒▒▒▒   ▒███ ▒▒▒ ▒███ ▒███     ▒███ ▒███████   ▒███    
+ ▒███         ▒███     ▒███ ▒███     ▒███ ▒███▒▒▒    ▒███ ███
+ █████        █████    ▒▒██████      ▒███ ▒▒██████   ▒▒█████ 
+▒▒▒▒▒        ▒▒▒▒▒      ▒▒▒▒▒▒       ▒███  ▒▒▒▒▒▒     ▒▒▒▒▒  
+                                 ███ ▒███                    
+                                ▒▒██████                     
+                                 ▒▒▒▒▒▒                      
 
-
-.filtre:hover .tooltip {
-  visibility: visible;
-  opacity: 1;
-}
-
-
-
-
-
-
- /*  
- 888888ba   888888ba   .88888.         dP  88888888b d888888P 
- 88    `8b  88    `8b d8'   `8b        88  88           88    
-a88aaaa8P' a88aaaa8P' 88     88        88 a88aaaa       88    
- 88         88   `8b. 88     88        88  88           88    
- 88         88     88 Y8.   .8P 88.  .d8P  88           88    
- dP         dP     dP  `8888P'   `Y8888'   88888888P    dP                                                                                                                          
-                
-
-
+*/
 /* Grille principale : 20% gauche, 80% droite */
 
 #project {
     overflow: hidden;
     /* Le body ne scroll jamais */
+    background-color: #f2f0ec;
 }
 
 #projetTYPE {
-    height: 100vh;
+    height: 200vh;
     width: 100vw;
     display: grid;
     
 }
 /* Conteneur principal */
-.conteneurProjet {
-    position: relative;
-}
+
 
 /* Colonne de gauche étroite */
 #colonnegauche {
     position: fixed;
-    top: 50px;
+    top: 12vw;                 /* était 50px : descend titre, texte et bouton */
+    height: calc(100vh - 12vw);
     left: 0;
-    height: calc(100vh - 50px);
     width: 31vw;
-    background-color: white;
-    padding: 1vw;
+
+    padding: 1vw 1vw 1vw 3vw; /* 3vw = même marge gauche que le header */
     box-sizing: border-box;
     overflow: hidden;
     z-index: 1;
     display: flex;
     flex-direction: column;
 }
-
 #colonnegauche aside {
     display: flex;
     flex-direction: column;
     height: 100%;
+    min-height: 0;
+}
+#colonnegauche aside p {
+    flex: 1 1 auto;
+    min-height: 0;              /* indispensable pour que le scroll fonctionne dans un flex */
+    overflow-y: auto;
+    padding-right: 1vw;         /* espace entre le texte et la barre de défilement */
+
+    font-family: "Apfel Grotezk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.3;
+    text-align: justify;
+    hyphens: auto;
 }
 
 #colonnegauche aside p {
-    flex: 1;
-    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #000 transparent;
 }
+
+
+#colonnegauche aside p::-webkit-scrollbar {
+    width: 4px;
+}
+
+#colonnegauche aside p::-webkit-scrollbar-thumb {
+    background: #000;
+    border-radius: 4px;
+}
+
 
 #colonnegauche h1 {
     font-size: 3em;
-    font-family: "miller-banner", serif;
-    line-height: 1.1;
-    font-style: italic;
-    margin-bottom: 2vw;
+    font-family:"Apfel Grotezk","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 500;
+    line-height: 0.95;
     margin-top: 2.5vw;
+    margin-bottom: 2.5vw;
+     margin-left: -0.05em; /* ajuste finement, 0 à -0.08em */
 }
 
+
 #colonnegauche h4 {
+    font-family: "Apfel Grotezk", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 0.9em;
+    color: #000; /* il était en blanc, donc invisible sur fond blanc */
     margin-bottom: 3vw;
-    color: black;
 }
+
+
 
 #colonnegauche h4 span {
     float: right;
@@ -369,27 +511,32 @@ a88aaaa8P' a88aaaa8P' 88     88        88 a88aaaa       88
 .team-section {
     margin-top: auto;
     padding-bottom: 2vw;
+       flex-shrink: 0;
 }
 
 .team-section p {
     font-size: 0.8em;
-    color: #888;
+    color: white;
 }
 
 .services {
-    border-top: 1px solid #ccc;
-    padding-top: 15px;
+    border-top: 1px solid #888;
+    padding-top: 1vw;
 }
 
 .service-item {
-    font-size: 0.75em;
-    padding: 6px 12px;
-    border: 1px solid black;
-    border-radius: 20px;
+    font-family: "Apfel Grotezk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 0.5em 1em;
+    border: 1px solid #555;
+    border-radius: 999px;
     display: inline-block;
-    margin-right: 8px;
-    margin-bottom: 8px;
+    margin: 0 0.5em 0.5em 0;
 }
+
+
 
 .NEXT {
     width: 100%;
@@ -401,13 +548,13 @@ a88aaaa8P' a88aaaa8P' 88     88        88 a88aaaa       88
 }
 
 .NEXT-item {
+    font-family: "Apfel Grotezk", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 1em;
-    padding: 6px 14px;
+    padding: 0.5vw 1vw;
     border: 1px solid black;
     border-radius: 20px;
     display: inline-block;
     text-decoration: none;
-    color: black;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     cursor: pointer;
 }
@@ -425,21 +572,52 @@ a88aaaa8P' a88aaaa8P' 88     88        88 a88aaaa       88
 }
 
 
+/* Chaque image de la colonne de droite démarre invisible */
+#colonnedroite figure {
+    opacity: 0;
+}
 
+#colonnedroite figure.apparition {
+    animation: apparaitre 0.8s ease forwards;
+}
 
 /* Colonne de droite élargie */
 #colonnedroite {
     position: fixed;
-    top: 6vw; /* même hauteur que la colonne gauche / header */
-    left: 35vw; /* commence après la colonne gauche */
-    height: calc(100vh - 6vw); /* prend toute la hauteur restante */
-    width: 65vw; /* reste de l’écran */
-    overflow-y: auto; /* scroll activé ici uniquement */
-    padding: 1vw; /* petit padding autour */
+    top: 0;
+    left: 35vw;
+    height: 100vh;
+    width: 65vw;
+    overflow-y: auto;
+    padding: 5vw 1vw 1vw 1vw;  /* 12vw = même valeur que la colonne de gauche */
     box-sizing: border-box;
 }
-
 /* Conteneur images 1 colonne */
+.imgdeuxcolonnes {
+    align-items: stretch;
+}
+
+.imgdeuxcolonnes .souscolgauche,
+.imgdeuxcolonnes .souscoldroite {
+    display: flex;
+}
+
+.imgdeuxcolonnes .souscolgauche figure,
+.imgdeuxcolonnes .souscoldroite figure {
+    flex: 1;
+  
+}
+
+/* la vidéo n'a plus de ratio imposé : elle prend la hauteur de l'image voisine */
+.souscolgauche .video-figure {
+    aspect-ratio: auto;
+}
+
+.souscoldroite figure img {
+    height: 100%;
+    object-fit: cover;
+}
+
 .imgunecolonne {
     width: 100%;
     margin-bottom: 1vw; /* espace entre les images verticalement */
@@ -580,144 +758,142 @@ a88aaaa8P' a88aaaa8P' 88     88        88 a88aaaa       88
 
 
 
+/* ---------- PAGE ABOUT ---------- */
 
 
 
 
+/* ---------- PAGE ABOUT ---------- */
+
+/* page statique, comme l'index */
+html:has(body#about) {
+    overflow: hidden;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
 
 body#about {
-  overflow: hidden;
+    margin: 0;
+    background: none;
+    font-family: "Apfel Grotezk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
 }
 
-.about-wrap {
-  height: calc(100vh - 50px);
-  margin-top: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 4vw;
-  padding-top: 6vw;
-  position: relative;
-  overflow: visible;
+/* même fond que l'index */
+#about #zone-collage {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(
+        to bottom,
+        #f2f0ec 0%,
+        #f2f0ec 75%,
+        #98ebbd 100%
+    );
 }
 
-.sticker {
-  position: absolute;
-  pointer-events: all;
-  user-select: none;
-  cursor: grab;
+/* cartes : même comportement que l'index */
+#about .carte {
+    position: absolute;
+    cursor: grab;
+    user-select: none;
+    touch-action: none;
+    background: none;
+    padding: 0;
+    opacity: 0;
+    transform: rotate(calc(var(--rot, 0deg) + var(--rot-souris, 0deg)));
+    translate: var(--px, 0px) var(--py, 0px);
+    will-change: transform, translate;
 }
 
-.sticker:active {
-  cursor: grabbing;
+#about .carte.apparition {
+    animation: apparaitre 0.8s ease forwards;
 }
 
-@keyframes f1 {
-  0%,100% { transform: translateY(0) rotate(-15deg); }
-  50% { transform: translateY(-10px) rotate(-15deg); }
-}
-@keyframes f2 {
-  0%,100% { transform: translateY(0) rotate(10deg); }
-  50% { transform: translateY(-14px) rotate(10deg); }
-}
-@keyframes f3 {
-  0%,100% { transform: translateY(0) rotate(-6deg); }
-  50% { transform: translateY(-8px) rotate(-6deg); }
-}
-@keyframes f4 {
-  0%,100% { transform: translateY(0) rotate(18deg); }
-  50% { transform: translateY(-12px) rotate(18deg); }
-}
-@keyframes f5 {
-  0%,100% { transform: translateY(0) rotate(-20deg); }
-  50% { transform: translateY(-9px) rotate(-20deg); }
-}
-@keyframes f6 {
-  0%,100% { transform: translateY(0) rotate(5deg); }
-  50% { transform: translateY(-13px) rotate(5deg); }
+#about .carte:active {
+    cursor: grabbing;
 }
 
-.s-disco    { top: 12%;    left: 28%;   width: 11vw; animation: spin 6s linear infinite; transform-origin: center; z-index: 10; }
-.s-soleil   { top: 30%;    right: 26%;  width: 12vw;  animation: f1 4s ease-in-out infinite; z-index: 12; }
-.s-motion   { top: 55%;    right: 40%;  width: 6vw;  animation: f3 3.8s ease-in-out infinite; z-index: 13; }
-.s-avatar   { top: 30%;    left: 24%;   width: 13vw; animation: f6 4.2s ease-in-out infinite; z-index: 10; }
-.s-tortue   { top: 14%;    right: 27%;  width: 9vw; animation: f2 5s ease-in-out infinite; z-index: 10; }
-.s-typo     { bottom: 25%; right: 28%;  width: 10vw; animation: f4 4.5s ease-in-out infinite; z-index: 10; }
-.s-appareil { top: 50%;    left: 42%;   width: 16vw; animation: f5 5s ease-in-out infinite; z-index: 10; transform: rotate(-90deg); }
-
-
-
-
-
-
-
-.center-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  z-index: 1;
-  max-width: 500px;
-  position: relative;
+#about .carte img {
+    width: 100%;
+    display: block;
+    pointer-events: none;
+    -webkit-user-drag: none;
 }
 
-.name-title {
-  font-family: "miller-banner", serif;
-  font-style: italic;
-  font-size: clamp(2.8rem, 6vw, 5rem);
-  line-height: 1.1;
-  margin-bottom: 0.4rem;
-  color: #000;
+/* ombre uniquement sur l'appareil */
+#about .carte:not(.sans-ombre) img {
+    filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.22));
 }
 
-.sub-label {
-  font-size: 0.8em;
-  color: #888;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-bottom: 2rem;
+/* grande fleur : rotation lente sur elle-même
+   (sur l'img pour ne pas bloquer le flottement de la carte) */
+#about .carte.tourne img {
+    animation: rotation-lente 40s linear infinite;
+    transform-origin: center;
 }
 
-.bio-text {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: #333;
-  margin-bottom: 1.2rem;
+@keyframes rotation-lente {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
 }
 
-.tag-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  justify-content: center;
-  margin-top: 1rem;
+/* texte à droite, comme la maquette */
+#about .about-texte {
+    position: absolute;
+    left: 46.5vw;
+    top: 20vh;
+    width: 49vw;
+    z-index: 5;
+    font-family: "Apfel Grotezk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: clamp(0.95rem, 1.85vw, 1.7rem);
+    font-weight: 400;
+    line-height: 1.3;
+    color: #000;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
 }
 
-.tag {
-  font-size: 1em;
-  padding: 8px 18px;
-  border: 1px solid black;
-  border-radius: 20px;
-  color: black;
-  pointer-events: none;
-  cursor: default;
+#about .about-texte.apparition {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.cta-link {
-  display: inline-block;
-  margin-top: 2rem;
-  font-size: 0.9em;
-  padding: 8px 20px;
-  border: 1px solid black;
-  border-radius: 20px;
-  color: black;
-  text-decoration: none;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
+#about .about-texte p + p {
+    margin-top: 1.3em;
 }
 
-.cta-link:hover {
-  background: black;
-  color: white;
-  transform: scale(1.06);
-  text-decoration: none;
+/* email : identique à l'index */
+#about #email-about {
+    position: fixed;
+    bottom: 2vh;
+    left: 3vw;
+    font-family: "Apfel Grotezk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.6em;
+    font-weight: 400;
+    line-height: 1.1;
+    z-index: 1600;
+    cursor: pointer;
+}
+
+#about #email-about:hover {
+    text-decoration: underline;
+}
+
+/* mobile */
+@media (max-width: 800px) {
+    #about .about-texte {
+        left: 7vw;
+        top: 58vh;
+        width: 86vw;
+        font-size: 1rem;
+    }
 }

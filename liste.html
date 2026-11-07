@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="style/reset.css">
+  <link rel="stylesheet" href="https://use.typekit.net/alm5gfd.css">
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="https://use.typekit.net/cpg8qip.css">
+  <link rel="icon" href="import/bouledisco.png" type="image/png">
+</head>
+
+<body id="liste">
+
+<header>
+  <div id="identite">
+    <h1><a href="index.html">/Serena Delgado <br><em><span class="def">Graphic design student</span><span class="hov">Back to home</span></em></a></h1>
+  </div>
+
+  <ul>
+    <li><a href="liste.html">Projects
+  </a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+</header>
+
+<!-- LISTE DES PROJETS -->
+<main class="liste-projets">
+
+  <h2 class="works">WORKS</h2>
+
+  <a href="chenaie.html" class="ligne-projet" data-image="import/01chenaie.png">
+    <span class="numero">01</span>
+    <span class="titre">Chênaie, Les domaines.</span>
+    <span class="meta">Visual Identity</span>
+  </a>
+
+  <a href="product.html" class="ligne-projet" data-image="import/01produit.png">
+    <span class="numero">03</span>
+    <span class="titre">Blossom GEL</span>
+    <span class="meta">Advertisement</span>
+  </a>
+  <a href="etsi.html" class="ligne-projet" data-image="import/etsi01.jpg">
+    <span class="numero">05</span>
+    <span class="titre">Et si le luxe?</span>
+    <span class="meta">Advertisement</span>
+  </a>
+
+  <a href="catch.html" class="ligne-projet" data-image="import/05catch.jpg">
+    <span class="numero">06</span>
+    <span class="titre">Catcher les Codes de la Gen Z</span>
+    <span class="meta">Communication Campaign</span>
+  </a>
+  <a href="mutek.html" class="ligne-projet" data-image="import/mutekcouv.jpg">
+    <span class="numero">08</span>
+    <span class="titre">Mutek</span>
+    <span class="meta">Animated Posters</span>
+  </a>
+  <a href="generique.html" class="ligne-projet" data-image="import/01generique.png">
+    <span class="numero">07</span>
+    <span class="titre">American Gigolo</span>
+    <span class="meta">Film Credits</span>
+  </a>
+ <a href="capvert.html" class="ligne-projet" data-image="import/capvert01.jpg">
+    <span class="numero">10</span>
+    <span class="titre">Tu es chez toi</span>
+    <span class="meta">Photography Series</span>
+  </a>
+
+
+  <a href="timbre.html" class="ligne-projet" data-image="import/01timbre.jpg">
+    <span class="numero">09</span>
+    <span class="titre">Flamingo Liberation</span>
+    <span class="meta">Animated Stamp</span>
+  </a>
+
+ 
+
+</main>
+
+<!-- APERCU IMAGE AU SURVOL -->
+<div id="apercu"><img src="" alt=""></div>
+
+<div id="voile"></div>
+
+
+
+<!-- SCRIPT APERCU -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const lignes = document.querySelectorAll(".ligne-projet");
+  const apercu = document.getElementById("apercu");
+  const apercuImg = apercu.querySelector("img");
+
+  lignes.forEach(ligne => {
+    ligne.addEventListener("mouseenter", () => {
+      apercuImg.src = ligne.getAttribute("data-image");
+      apercu.classList.add("visible");
+    });
+    ligne.addEventListener("mouseleave", () => {
+      apercu.classList.remove("visible");
+    });
+  });
+
+  document.addEventListener("mousemove", (e) => {
+    apercu.style.left = e.clientX + "px";
+    apercu.style.top = e.clientY + "px";
+  });
+
+  // ===== TRANSITION FLOU-FONDU ENTRE PAGES =====
+  const voile = document.getElementById("voile");
+
+  // À l'arrivée sur la page : on dissipe le voile s'il est actif
+  requestAnimationFrame(() => voile.classList.remove("actif"));
+
+  // Au clic sur un lien interne : voile flou, puis navigation
+  document.querySelectorAll("a[href]").forEach(lien => {
+    lien.addEventListener("click", (e) => {
+      const href = lien.getAttribute("href");
+      if (!href || href.startsWith("#") || href.startsWith("mailto:")
+          || lien.target === "_blank") return;
+
+      e.preventDefault();
+      voile.classList.add("actif");
+      document.body.classList.add("sortie");
+
+      setTimeout(() => { window.location.href = href; }, 450);
+    });
+  });
+
+  // ===== RETOUR EN ARRIÈRE (bfcache) : on nettoie le flou =====
+  window.addEventListener("pageshow", () => {
+    voile.classList.remove("actif");
+    document.body.classList.remove("sortie");
+  });
+});
+</script>
+
+</body>
+</html>
