@@ -595,17 +595,16 @@ header ul li a:active {
 }
 #colonnegauche aside p {
     flex: 1 1 auto;
-    min-height: 0;              /* indispensable pour que le scroll fonctionne dans un flex */
+    min-height: 0;
     overflow-y: auto;
-    padding-right: 1vw;         /* espace entre le texte et la barre de défilement */
+    padding-right: 1vw;
 
     font-family: "Apfel Grotezk", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 1.05rem;
     line-height: 1.3;
-    text-align: justify;
-    hyphens: auto;
+    text-align: left;
+    hyphens: none;
 }
-
 #colonnegauche aside p {
     scrollbar-width: thin;
     scrollbar-color: #000 transparent;
@@ -1033,4 +1032,107 @@ body#about {
         width: 86vw;
         font-size: 1rem;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* ============ MOBILE ============ */
+@media (max-width: 800px) {
+
+  /* hauteur réelle sur téléphone (barre d'adresse) */
+  body#collage, body#about { height: 100dvh; }
+  #collage #zone-collage, #about #zone-collage { height: 100dvh; }
+
+  /* header */
+  #identite h1 { font-size: 1.2em; margin-top: 4vw; margin-left: 4vw; }
+  header ul { width: auto; gap: 8px; margin-right: 4vw; margin-top: 4vw; }
+  header ul li a { font-size: 0.85em; padding: 4px 12px; }
+
+  /* collage : le drag au doigt marche seulement avec touch-action */
+  #collage .carte { touch-action: none; scale: 1.8; }
+  #about .carte   { scale: 1.6; }
+
+  /* about : texte plus bas, défilable s'il dépasse */
+  #about .about-texte {
+    left: 7vw; top: 52vh; width: 86vw;
+    font-size: 0.9rem;
+    max-height: 34vh; overflow-y: auto;
+  }
+
+  /* liste */
+  .liste-projets { margin-top: 28vw; }
+
+  /* pages projet : on empile, et c'est la page qui défile */
+  #project { overflow-y: auto; }
+  #projetTYPE { height: auto; display: block; }
+
+  #colonnegauche {
+    position: static; width: 100%; height: auto;
+    padding: 24vw 5vw 4vw;
+  }
+  #colonnegauche aside { height: auto; }
+  #colonnegauche aside p { overflow: visible; font-size: 1rem; }
+  #colonnegauche h1 { font-size: 2.2em; }
+  #colonnegauche h4 { margin-bottom: 5vw; }
+  .team-section { padding-bottom: 6vw; margin-top: 6vw; }
+
+  #colonnedroite {
+    position: static; width: 100%; height: auto;
+    overflow: visible; padding: 0 5vw 5vw;
+  }
+  .imgdeuxcolonnes { grid-template-columns: 1fr; gap: 3vw; }
+  .imgpleinelargeur { margin-bottom: 3vw; }
+  .souscoldroite figure img { height: auto; }
+  .NEXT { margin-top: 12vw; }
+  .NEXT-item { padding: 8px 16px; }
+}
 }
