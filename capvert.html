@@ -1,145 +1,144 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Portfolio</title>
-        <link rel="stylesheet" href="style/reset.css">
-        <link rel="stylesheet" href="style/style.css">
-        <link rel="stylesheet" href="https://use.typekit.net/cpg8qip.css">
-        <link rel="icon" href="import/avatar.png" type="image/png">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
 
-        
-    </head>
+    <link rel="stylesheet" href="style/reset.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/cpg8qip.css">
+    <link rel="icon" href="import/avatar.png" type="image/png">
+</head>
+
 <body id="project">
 
-<header>
-  <div id="identite">
-    <h1><a href="index.html">/Serena Delgado <br><em><span class="def">Graphic design student</span><span class="hov">Back to home</span></em></a></h1>
-  </div>
+    <header>
+        <div id="identite">
+            <h1>
+                <a href="index.html">
+                    /Serena Delgado <br>
+                    <em>
+                        <span class="def">Graphic design student</span>
+                        <span class="hov">Back to home</span>
+                    </em>
+                </a>
+            </h1>
+        </div>
 
-  <ul>
-    <li><a href="liste.html">Projects
-  </a></li>
-    <li><a href="about.html">About</a></li>
-  </ul>
-</header>
+        <ul>
+            <li><a href="liste.html">Projects</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </header>
 
 
     <section id="projetTYPE" class="conteneurProjet">
-        <!-- Colonne de gauche étroite -->
+
+        <!-- COLONNE DE GAUCHE -->
         <div id="colonnegauche">
+
             <aside>
+
                 <h1>Tu es chez toi</h1>
+
                 <h4>Cap-Vert, <br>Afrique<span>2024</span></h4>
+
                 <p>
                     This photographic series explores my connection to Cape Verde, my country of origin, where I do not live but where I feel I belong. Through my grandmother’s house in Santo Antão, her neighborhood, and Porto Novo, I express a sense of calm and belonging. I worked with a palette of warm, natural tones inspired by the landscape. My subjects are those that make up my daily life there: my family, the houses, and the street animals.
-
-
                 </p>
-               
 
- <!-- Colonne de droite élargie -->
-        <div id="colonnedroite">
-            
-            
-
-
-<div id="colonnedroite">
-
-
-
-
-
- <div class="imgpleinelargeur">
-  <figure>
-    <img src="import/capvert01.jpg" alt="PHOTO DU CAP-VERT">
-  </figure>
-</div>
-
-
- 
-  
- 
-  <div class="imgdeuxcolonnes">
-   
-    <div class="souscolgauche">
-      <figure>
-        <img src="import/capvert03.jpg">
-      </figure>
-    </div>
-   
-    <div class="souscoldroite">
-      <figure>
-        <img src="import/capvert.jpg">
-      </figure>
-    </div>
-  </div>
- <div class="imgpleinelargeur">
-  <figure>
-    <img src="import/capvert04.jpg" alt="logo chênaie">
-  </figure>
-  </div>
-
-
-
-
-
-
- <div class="NEXT">
-     
-                     <a href="chenaie.html">   
-                        <div class="NEXT-item">NEXT PROJECT</div>
-                    </a>
-                    </div>
-
-
-</div>
-
-
-
-
- 
-        </div>
-
+                <!-- TEAM SECTION EN BAS DE LA COLONNE -->
                 <div class="team-section">
-                    <p></p>
                     <div class="services">
                         <div class="service-item">PHOTOGRAPHIE</div>
-                        
-                        
-                        
-
                     </div>
                 </div>
+
             </aside>
+
         </div>
 
-       
+
+        <!-- COLONNE DE DROITE -->
+        <div id="colonnedroite">
+
+            <div class="imgpleinelargeur">
+                <figure>
+                    <img src="import/capvert01.jpg" alt="PHOTO DU CAP-VERT">
+                </figure>
+            </div>
+
+            <!-- IMAGES EN DEUX COLONNES -->
+            <div class="imgdeuxcolonnes">
+
+                <div class="souscolgauche">
+                    <figure>
+                        <img src="import/capvert03.jpg">
+                    </figure>
+                </div>
+
+                <div class="souscoldroite">
+                    <figure>
+                        <img src="import/capvert.jpg">
+                    </figure>
+                </div>
+
+            </div>
+
+            <div class="imgpleinelargeur">
+                <figure>
+                    <img src="import/capvert04.jpg" alt="logo chênaie">
+                </figure>
+            </div>
+
+            <!-- PROJET SUIVANT -->
+            <div class="NEXT">
+                <a href="chenaie.html">
+                    <div class="NEXT-item">NEXT PROJECT</div>
+                </a>
+            </div>
+
+        </div>
+
     </section>
 
 
+    <!-- APPARITION DES IMAGES AU SCROLL -->
+    <script>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const images = document.querySelectorAll("#colonnedroite figure");
+        document.addEventListener("DOMContentLoaded", () => {
 
-  images.forEach((fig, i) => {
-    setTimeout(() => fig.classList.add("apparition"), 400 + i * 600);
-  });
-});
-</script>
+            const conteneur = document.querySelector("#colonnedroite");
+            const images = document.querySelectorAll("#colonnedroite figure");
+
+            const observer = new IntersectionObserver((entries) => {
+
+                entries.forEach((entry) => {
+
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+
+                        // On arrête d'observer l'image une fois apparue
+                        observer.unobserve(entry.target);
+                    }
+
+                });
+
+            }, {
+                root: conteneur,
+                threshold: 0.15,
+                rootMargin: "0px 0px -5% 0px"
+            });
+
+            images.forEach((image) => {
+                observer.observe(image);
+            });
+
+        });
+
+    </script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
