@@ -118,6 +118,11 @@ document.addEventListener("DOMContentLoaded", () => {
     carte.addEventListener("pointerup", () => {
       enCours = false;
     });
+
+    // Évite qu'un drag interrompu reste « collé »
+    carte.addEventListener("pointercancel", () => {
+      enCours = false;
+    });
   });
 
   // ===== MOUVEMENT AUTONOME + PARALLAXE SOURIS =====
@@ -193,6 +198,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 </script>
+
+<!-- Curseur rond (ordi) + rond sous le doigt (mobile) -->
+<script src="curseur.js"></script>
 
 </body>
 </html>

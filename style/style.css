@@ -1216,6 +1216,39 @@ body#about {
 
 
 
+/* ---------- CURSEUR : rond noir partout, jamais de main ---------- */
+:root {
+  --rond: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22'%3E%3Ccircle cx='11' cy='11' r='9' fill='black'/%3E%3C/svg%3E") 11 11, auto;
+  --rond-blanc: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22'%3E%3Ccircle cx='11' cy='11' r='9' fill='white'/%3E%3C/svg%3E") 11 11, auto;
+}
+
+/* !important pour écraser les « cursor: pointer » et « grab » déjà dans ton CSS */
+*, *::before, *::after { cursor: var(--rond) !important; }
+
+/* page liste : fond noir, donc rond blanc */
+body#liste, body#liste * { cursor: var(--rond-blanc) !important; }
+
+/* rond sous le doigt (mobile) */
+#doigt {
+  position: fixed;
+  left: 0; top: 0;
+  width: 28px; height: 28px;
+  margin: -14px 0 0 -14px;
+  border-radius: 50%;
+  background: #000;
+  pointer-events: none;
+  z-index: 4000;
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+#doigt.actif { opacity: 1; transform: scale(1); }
+body#liste #doigt { background: #fff; }
+
+
+
+
+
 
 
 

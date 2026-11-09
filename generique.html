@@ -95,6 +95,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const conteneur = document.querySelector("#colonnedroite");
     const images = document.querySelectorAll("#colonnedroite figure");
 
+    // Sur mobile, c'est la page qui défile, pas la colonne
+    const mobile = window.matchMedia("(max-width: 800px)").matches;
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
@@ -104,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }, {
-        root: conteneur,
+        root: mobile ? null : conteneur,
         threshold: 0.15,
         rootMargin: "0px 0px -5% 0px"
     });
@@ -115,6 +118,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 </script>
+
+<!-- Curseur rond (ordi) + rond sous le doigt (mobile) -->
+<script src="curseur.js"></script>
 
 </body>
 </html>
