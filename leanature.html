@@ -73,13 +73,16 @@ The new identity is rolled out across various touchpoints, including logo animat
 
             <div class="imgpleinelargeur">
                 <figure>
-                    <img src="import/lncharte.jpg" alt="logo chênaie">
+                    <picture>
+                        <source media="(max-width: 800px)" srcset="import/mobilelncharte.jpg">
+                        <img src="import/lncharte.jpg" alt="Charte graphique Léa Nature">
+                    </picture>
                 </figure>
             </div>
 
             <!-- PROJET SUIVANT -->
             <div class="NEXT">
-                <a href="chenaie.html">
+                <a href="mutek.html">
                     <div class="NEXT-item">NEXT PROJECT</div>
                 </a>
             </div>
@@ -97,6 +100,9 @@ The new identity is rolled out across various touchpoints, including logo animat
             const conteneur = document.querySelector("#colonnedroite");
             const images = document.querySelectorAll("#colonnedroite figure");
 
+            // Sur mobile, c'est la page qui défile, pas la colonne
+            const mobile = window.matchMedia("(max-width: 800px)").matches;
+
             const observer = new IntersectionObserver((entries) => {
 
                 entries.forEach((entry) => {
@@ -111,7 +117,7 @@ The new identity is rolled out across various touchpoints, including logo animat
                 });
 
             }, {
-                root: conteneur,
+                root: mobile ? null : conteneur,
                 threshold: 0.15,
                 rootMargin: "0px 0px -5% 0px"
             });

@@ -1143,15 +1143,6 @@ body#about {
 
 @media (max-width: 800px) {
 
-  /* header : boutons l'un au-dessus de l'autre */
-  header { align-items: flex-start; }
-  header ul {
-    flex-direction: column;
-    align-items: stretch;      /* même largeur pour les deux */
-    gap: 6px;
-    margin-top: 4vw;
-  }
-  header ul li a { display: block; text-align: center; }
 
   /* about : la page défile */
   html:has(body#about) { overflow-y: auto; height: auto; }
@@ -1194,3 +1185,37 @@ body#about {
     padding-bottom: 3vh;
   }
 }
+
+@media (max-width: 800px) {
+  #colonnegauche h1 { margin-top: 10vw; }
+  #colonnegauche h1 { margin-bottom: 10vw; }
+  #colonnegauche h4 { margin-bottom: 7vw; }
+}
+
+  /* pour que mutek soit visible */
+@media (max-width: 800px) {
+  /* plus de flex en mobile : les figures prennent simplement toute la largeur */
+  .imgdeuxcolonnes .souscolgauche,
+  .imgdeuxcolonnes .souscoldroite {
+    display: block;
+  }
+
+  .imgdeuxcolonnes .souscolgauche figure.video-figure {
+    width: 100%;
+    aspect-ratio: 2 / 3;   /* à adapter au ratio de ta vidéo */
+    flex: none;
+    margin: 0 0 20px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
